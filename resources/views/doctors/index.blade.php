@@ -14,14 +14,14 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h4>View Specialist
-                            <a href="#" class="btn btn-sm btn-primary float-end">Add Specialist</a>
+                        <h4>View Appointment
+                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end">Add Specialist</a>
                         </h4>
                     </div>
                     <div class="card-body">
                         <table id="articleDataTable" class="table table-bordered table-striped" style="width: 100%;">
                             <thead>
-                                <tr>
+                                <tr style="text-align: center;">
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Age</th>
