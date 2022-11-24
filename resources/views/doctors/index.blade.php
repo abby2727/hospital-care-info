@@ -9,11 +9,9 @@
                 @if (session('message-delete'))
                     <h6 class="alert alert-danger">{{ session('status') }}</h6>
                 @endif
-
                 @if (session('message'))
                     <h6 class="alert alert-success">{{ session('status_2') }}</h6>
                 @endif
-
                 <div class="card">
                     <div class="card-header">
                         <h4>View Specialist
@@ -25,7 +23,6 @@
                             <thead>
                                 <tr>
                                     <th>First Name</th>
-                                    <th>Middle Name</th>
                                     <th>Last Name</th>
                                     <th>Age</th>
                                     <th>Sex</th>
@@ -37,7 +34,6 @@
                             <tbody>
                                 <tr>
                                     <td>Abdul</td>
-                                    <td>A.</td>
                                     <td>Pangandaman</td>
                                     <td>23</td>
                                     <td>Male</td>
@@ -47,7 +43,6 @@
                                 </tr>
                                 <tr>
                                     <td>Bate</td>
-                                    <td>B.</td>
                                     <td>Luke</td>
                                     <td>24</td>
                                     <td>Male</td>
@@ -57,7 +52,6 @@
                                 </tr>
                                 <tr>
                                     <td>Philip</td>
-                                    <td>C.</td>
                                     <td>Lukas</td>
                                     <td>25</td>
                                     <td>Male</td>
