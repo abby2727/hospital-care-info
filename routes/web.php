@@ -21,10 +21,12 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     // Doctor 
     Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');
     Route::get('/add-doctors', [DoctorController::class, 'create'])->name('doctors.create');
-
+    Route::post('/doctors', [DoctorController::class, 'store'])->name('doctors.store');
+    
     // Patient
     Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
     Route::get('/add-patients', [PatientController::class, 'create'])->name('patients.create');
+    Route::post('/patients', [PatientController::class, 'store'])->name('patients.store');
 
     // Patient
     Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');

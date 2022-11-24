@@ -15,7 +15,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>View Specialist
-                            <a href="#" class="btn btn-sm btn-primary float-end">Add Specialist</a>
+                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end">Add
+                                Specialist</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -32,33 +33,61 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Abdul</td>
-                                    <td>Pangandaman</td>
-                                    <td>23</td>
-                                    <td>Male</td>
-                                    <td>09213459130</td>
-                                    <td>example@gmail.com</td>
-                                    <td>Dental</td>
-                                </tr>
-                                <tr>
-                                    <td>Bate</td>
-                                    <td>Luke</td>
-                                    <td>24</td>
-                                    <td>Male</td>
-                                    <td>09213459234</td>
-                                    <td>example2@gmail.com</td>
-                                    <td>Dermatology</td>
-                                </tr>
-                                <tr>
-                                    <td>Philip</td>
-                                    <td>Lukas</td>
-                                    <td>25</td>
-                                    <td>Male</td>
-                                    <td>09213459123</td>
-                                    <td>example3@gmail.com</td>
-                                    <td>Surgeon</td>
-                                </tr>
+                                @foreach ($doctors as $doctor)
+                                    <tr>
+                                        <td>{{ $doctor->first_name }}</td>
+                                        <td>{{ $doctor->last_name }}</td>
+                                        <td>{{ $doctor->age }}</td>
+                                        <td>
+                                            @if ($doctor->sex == '0')
+                                                <h6>Male</h6>
+                                            @endif
+                                            @if ($doctor->sex == '1')
+                                                <h6>Female</h6>
+                                            @endif
+                                        </td>
+                                        <td>{{ $doctor->contact_number }}</td>
+                                        <td>{{ $doctor->email }}</td>
+                                        <td>
+                                            @if ($doctor->specialties == '0')
+                                                <h6>Dentist</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '1')
+                                                <h6>Neurology</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '2')
+                                                <h6>Internal Medicine</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '3')
+                                                <h6>Surgery</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '4')
+                                                <h6>Pediatrics</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '5')
+                                                <h6>Radiology</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '6')
+                                                <h6>Dermatology</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '7')
+                                                <h6>Psychiatry</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '8')
+                                                <h6>Cardiology</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '9')
+                                                <h6>Otorhinolaryngology</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '10')
+                                                <h6>Physical Therapy</h6>
+                                            @endif
+                                            @if ($doctor->specialties == '11')
+                                                <h6>Plastic Surgery</h6>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
