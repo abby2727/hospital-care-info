@@ -12,10 +12,9 @@
             <div class="col-3">
                 <p></p>
                 <div class="p-2">
-                    <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png"
-                        class="d-block img-fluid" alt="image">
-                    <div class="d-grid col-12 mx-auto">
-                        <button class="btn btn-success" type="button"><span></span>Save Record</button>
+                    <img src="https://source.unsplash.com/collection/190727/1000x900" class="d-block img-fluid" alt="image">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" style="text-align: center;">
                     </div>
                 </div>
             </div>
@@ -68,11 +67,14 @@
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">
                     </div>
+
                     <div class="input-group mb-3">
-                        <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                         <input type="text" name="presciption" class="form-control" placeholder="Presciption">
                     </div>
                 </div>
+            </div>
+            <div class="d-grid col-3 mx-auto">
+                <button class="btn btn-primary" type="button"><span></span>Save Record</button>
             </div>
         </div>
     </div>
