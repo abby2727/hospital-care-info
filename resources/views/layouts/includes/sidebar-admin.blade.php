@@ -1,13 +1,13 @@
 <style>
     .container {
-	width: 1024px;
-	padding: 2em;
-}
+        width: 1024px;
+        padding: 2em;
+    }
 
-.bold-blue {
-	font-weight: bold;
-	color: #0277BD;
-}
+    .bold-blue {
+        font-weight: bold;
+        color: #0277BD;
+    }
 </style>
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -50,24 +50,41 @@
                         <a class="nav-link" href="{{ route('patients.index') }}">View Patient</a>
                     </nav>
                 </div>
+
+                <div class="sb-sidenav-menu-heading">Appointment Process</div>
+
+                {{-- Appointment Process --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                    data-bs-target="#collapseAppointment" aria-expanded="false" aria-controls="collapseAppointment">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Appointment
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseAppointment" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('appointments.create') }}">Add Appointment</a>
+                        <a class="nav-link" href="{{ route('appointments.index') }}">List of Appointment</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </nav>
 </div>
 <script>
     //exporte les données sélectionnées
-var $table = $('#table');
-    $(function () {
-        $('#toolbar').find('select').change(function () {
+    var $table = $('#table');
+    $(function() {
+        $('#toolbar').find('select').change(function() {
             $table.bootstrapTable('refreshOptions', {
                 exportDataType: $(this).val()
             });
         });
     })
 
-		var trBoldBlue = $("table");
+    var trBoldBlue = $("table");
 
-	$(trBoldBlue).on("click", "tr", function (){
-			$(this).toggleClass("bold-blue");
-	});
+    $(trBoldBlue).on("click", "tr", function() {
+        $(this).toggleClass("bold-blue");
+    });
 </script>

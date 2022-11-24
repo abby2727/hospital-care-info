@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\PatientController;
@@ -24,9 +25,12 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     // Patient
     Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
     Route::get('/add-patients', [PatientController::class, 'create'])->name('patients.create');
+
+    // Patient
+    Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
+    Route::get('/add-appointments', [AppointmentController::class, 'create'])->name('appointments.create');
 });
 
 Route::get('/doctors', function () {
     return view('doctors');
 });
-
