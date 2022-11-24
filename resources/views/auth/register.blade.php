@@ -1,5 +1,11 @@
 @extends('layouts.app')
+<style>
+    body {
+        background-image: url('assets/img/bg.webp');
+        background-size: cover;
+    }
 
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

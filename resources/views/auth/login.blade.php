@@ -1,11 +1,20 @@
 @extends('layouts.app')
+<style>
+    body {
+        background-image: url('assets/img/bg.webp');
+        background-size: cover;
+    }
 
+    .card-body{
+        background-color: rgba(0,0,0,0,1);
+    }
+</style>
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="ds col-md-5">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header text-center">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
