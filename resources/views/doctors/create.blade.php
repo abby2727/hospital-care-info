@@ -3,6 +3,9 @@
 @section('title', 'Add Specialist')
 
 @section('content')
+<form action="{{ route('doctors.store')}}" method="POST">
+    @csrf
+    @method('POST')
     <div class="container-fluid px-4">
         <div class="row">
             <p></p>
@@ -14,9 +17,9 @@
                 <div class="p-2">
                     <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png"
                         class="d-block img-fluid" alt="image" style="width: 300px; height: 200px">
-                    {{-- <div class="input-group mb-3">
-                        <input type="file" class="form-control" style="text-align: center;">
-                    </div> --}}
+                        <div class="d-grid col-12 mx-auto">
+                            <button class="btn btn-success" type="button"><span></span>Save Record</button>
+                        </div>
                 </div>
             </div>
 
@@ -25,7 +28,7 @@
                 <div class="p-2">
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
-                        <input type="text" name="first-name" class="form-control" placeholder="First Name">
+                        <input type="text" name="firstname" class="form-control" placeholder="First Name">
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="middle-name" class="form-control" placeholder="Middle Name">
@@ -71,9 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-grid col-3 mx-auto">
-                <button class="btn btn-primary" type="button"><span></span>Save Record</button>
-            </div>
         </div>
     </div>
+</form>
 @endsection

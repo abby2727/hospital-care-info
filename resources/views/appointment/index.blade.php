@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'View Specialist')
-
+@section('title', 'View Appointment')
+dasdasd
 @section('content')
     <div class="container-fluid mt-4">
         <div class="row">
@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>View Patient
-                            <a href="{{ route('patients.create') }}" class="btn btn-sm btn-primary float-end">Add Patient</a>
+                            <a href="{{ route('appointments.create') }}" class="btn btn-sm btn-primary float-end">Add Appointment</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -31,6 +31,7 @@
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Prescription</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,6 +45,11 @@
                                     <td>09213410341</td>
                                     <td>example@outlook.com</td>
                                     <td>Rest WELL</td>
+                                    <td>
+                                        Update
+                                        Delete
+                                        Print Qr
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

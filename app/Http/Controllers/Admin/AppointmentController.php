@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
-    public function index()
+    public function index() 
     {
-        return 'index appointment';
+        return view('appointment.index');
     }
-
+    
     public function create()
     {
-        return 'create appointment';
+        return view('appointment.create');
     }
 }
