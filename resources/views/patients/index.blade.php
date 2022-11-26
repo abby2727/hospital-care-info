@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'View Specialist')
+@section('title', 'View Patient')
 
 @section('content')
     <div class="container-fluid mt-4">
@@ -21,6 +21,8 @@
                     <div class="card-body">
                         <table id="articleDataTable" class="table table-bordered table-striped" style="width: 100%;">
                             <thead>
+                                {{-- @foreach ($patients as $patient)
+                                @endforeach --}}
                                 <tr>
                                     <th>Specialist Assign</th>
                                     <th>First Name</th>
@@ -31,6 +33,7 @@
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Prescription</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

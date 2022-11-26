@@ -19,10 +19,10 @@ class CreateDoctorsTable extends Migration
             $table->string('middle_name');
             $table->string('last_name');
             $table->integer('age');
-            $table->tinyInteger('sex')->default('0');
+            $table->string('sex');
             $table->integer('contact_number');
             $table->string('email');
-            $table->tinyInteger('specialties')->default('0');
+            $table->string('specialties');
             $table->timestamps();
         });
     }

@@ -1,16 +1,20 @@
 @extends('layouts.admin')
-
 @section('title', 'View Specialist')
-
 @section('content')
+
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
-                @if (session('message-delete'))
-                    <h6 class="alert alert-danger">{{ session('status') }}</h6>
+                @if (session('deleted'))
+                    <h6 class="alert alert-danger">{{ session('deleted') }}</h6>
                 @endif
-                @if (session('message'))
-                    <h6 class="alert alert-success">{{ session('status_2') }}</h6>
+                @if (session('status'))
+                    <h6 class="alert alert-success">{{ session('status') }}</h6>
+                @endif
+                @if (session('update'))
+                    <div class="alert alert-primary" role="alert">
+                        {{ session('update') }}
+                    </div>
                 @endif
                 <div class="card">
                     <div class="card-header">
@@ -30,6 +34,7 @@
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Specialties</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,52 +44,26 @@
                                         <td>{{ $doctor->last_name }}</td>
                                         <td>{{ $doctor->age }}</td>
                                         <td>
-                                            @if ($doctor->sex == '0')
-                                                <h6>Male</h6>
-                                            @endif
-                                            @if ($doctor->sex == '1')
-                                                <h6>Female</h6>
-                                            @endif
+                                            {{ $doctor->sex }}
                                         </td>
                                         <td>{{ $doctor->contact_number }}</td>
                                         <td>{{ $doctor->email }}</td>
+                                        <td>{{ $doctor->specialties }}</td>
                                         <td>
-                                            @if ($doctor->specialties == '0')
-                                                <h6>Dentist</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '1')
-                                                <h6>Neurology</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '2')
-                                                <h6>Internal Medicine</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '3')
-                                                <h6>Surgery</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '4')
-                                                <h6>Pediatrics</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '5')
-                                                <h6>Radiology</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '6')
-                                                <h6>Dermatology</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '7')
-                                                <h6>Psychiatry</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '8')
-                                                <h6>Cardiology</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '9')
-                                                <h6>Otorhinolaryngology</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '10')
-                                                <h6>Physical Therapy</h6>
-                                            @endif
-                                            @if ($doctor->specialties == '11')
-                                                <h6>Plastic Surgery</h6>
-                                            @endif
+                                            <ul class="list-inline m-0">
+                                                <li class="list-inline-item">
+                                                    <a href="{{ route('doctors.edit', $doctor->id) }}"
+                                                        class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <form action="{{ route('doctors.doctorsDelete', $doctor->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <input type="submit" value="Delete" class="btn btn-danger"
+                                                           >
+                                                    </form>
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 @endforeach

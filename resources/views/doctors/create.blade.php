@@ -17,16 +17,16 @@
                 <div class="col-4">
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
-                        <input type="text" name="first-name" class="form-control" placeholder="First Name">
+                        <input type="text" name="first-name" required class="form-control" placeholder="First Name">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="middle-name" class="form-control" placeholder="Middle Name">
+                        <input type="text" name="middle-name" required class="form-control" placeholder="Middle Name">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="last-name" class="form-control" placeholder="Last Name">
+                        <input type="text" name="last-name" required  class="form-control" placeholder="Last Name">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" name="age" class="form-control" placeholder="Age">
+                        <input type="number" name="age" required class="form-control" placeholder="Age">
                     </div>
                 </div>
                 <div class="col-5">
@@ -40,27 +40,27 @@
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" name="number" class="form-control" placeholder="Contact Number">
+                        <input type="number" required name="number" class="form-control" placeholder="Contact Number">
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" required name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                         <select class="form-select" name="specialties" aria-label="Default select example">
-                            <option value="" disabled selected>Select Specialties</option>
-                            <option value="0">Dentist</option>
-                            <option value="1">Neurology</option>
-                            <option value="2">Internal Medicine</option>
-                            <option value="3">Surgery</option>
-                            <option value="4">Pediatrics</option>
-                            <option value="5">Radiology</option>
-                            <option value="6">Dermatology</option>
-                            <option value="7">Psychiatry</option>
-                            <option value="8">Cardiology</option>
-                            <option value="9">Otorhinolaryngology</option>
-                            <option value="10">Physical Therapy</option>
-                            <option value="11">Plastic Surgery</option>
+                            <option value="Not Specialist Selected" disabled selected>Select Specialties</option>
+                            <option value="Dentist">Dentist</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Internal Medicine">Internal Medicine</option>
+                            <option value="Surgery">Surgery</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Radiology">Radiology</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="Psychiatry">Psychiatry</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Otorhinolaryngology">Otorhinolaryngology</option>
+                            <option value="Physical Therapy">Physical Therapy</option>
+                            <option value="Plastic Surgery">Plastic Surgery</option>
                         </select>
                     </div>
                 </div>

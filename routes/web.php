@@ -22,7 +22,10 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');
     Route::get('/add-doctors', [DoctorController::class, 'create'])->name('doctors.create');
     Route::post('/doctors', [DoctorController::class, 'store'])->name('doctors.store');
-    
+    Route::get('doctors/{id}', [DoctorController::class, 'edit'])->name('doctors.edit');
+    Route::post('doctorsUpdate/{id}', [DoctorController::class, 'update'])->name('doctors.doctorsUpdate');
+    Route::delete('doctorsDelete/{id}', [DoctorController::class, 'delete'])->name('doctors.doctorsDelete');
+
     // Patient
     Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
     Route::get('/add-patients', [PatientController::class, 'create'])->name('patients.create');

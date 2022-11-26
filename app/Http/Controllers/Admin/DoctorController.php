@@ -20,6 +20,37 @@ class DoctorController extends Controller
         return view('doctors.create');
     }
 
+    public function edit(Request $request, $id)
+    {
+        $doctors = Doctor::find($id);
+        return view('doctors.edit', compact('doctors'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+        $doctors = Doctor::find($id);
+        $doctors->first_name = $request->input('first-name');
+        $doctors->middle_name =  $request->input('middle-name');
+        $doctors->last_name = $request->input('last-name');
+        $doctors->age =  $request->input('age');
+        $doctors->sex =  $request->input('sex');
+        $doctors->contact_number =  $request->input('number');
+        $doctors->email = $request->input('email');
+        $doctors->specialties =  $request->input('specialties');
+        $doctors->update();
+        return redirect()->route('doctors.index')->with('update', 'Doctors updated successfully!');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $doctors = Doctor::find($id);
+        $doctors->delete();
+        return redirect()->route('doctors.index')->with('deleted', 'Specialist Deleted!');
+
+    }
+
+
     public function store(Request $request)
     {
         $doctors = new Doctor();
