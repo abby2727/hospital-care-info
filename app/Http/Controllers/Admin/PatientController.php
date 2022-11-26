@@ -11,7 +11,9 @@ class PatientController extends Controller
 {
     public function index()
     {
-        return view('patients.index');
+        $patients = Patient::orderBy('id', 'ASC')->get();
+
+        return view('patients.index', compact('patients'));
     }
 
     public function create()
@@ -38,5 +40,40 @@ class PatientController extends Controller
 
         $patients->save();
         return redirect()->route('patients.index')->with('status', 'Patient added successfully!');
+    }
+
+    public function edit($id)
+    {
+        $patients = Patient::find($id);
+        $doctors = Doctor::all();
+
+        return view('patients.edit', compact('patients', 'doctors'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $patients = Patient::find($id);
+
+        $patients->doctor_id = $request->input('doctor_id');
+        $patients->first_name = $request->input('first-name');
+        $patients->middle_name = $request->input('middle-name');
+        $patients->last_name = $request->input('last-name');
+        $patients->sex = $request->input('sex');
+        $patients->age = $request->input('age');
+        $patients->address = $request->input('address');
+        $patients->contact_number = $request->input('number');
+        $patients->email = $request->input('email');
+        $patients->prescription = $request->input('prescription');
+
+        $patients->update();
+        return redirect()->route('patients.index')->with('status', 'Patient updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $patients = Patient::find($id);
+
+        $patients->delete();
+        return redirect()->route('patients.index')->with('status_delete', 'Patient deleted successfully!');
     }
 }

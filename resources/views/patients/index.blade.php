@@ -24,30 +24,54 @@
                                 {{-- @foreach ($patients as $patient)
                                 @endforeach --}}
                                 <tr>
-                                    <th>Specialist Assign</th>
+                                    <th>ID</th>
+                                    <th>Doctor Name</th>
                                     <th>First Name</th>
+                                    <th>Middle Name</th>
                                     <th>Last Name</th>
                                     <th>Sex</th>
                                     <th>Age</th>
                                     <th>Address</th>
                                     <th>Contact Number</th>
                                     <th>Email</th>
-                                    <th>Prescription</th>
-                                    <th>Action</th>
+                                    <th>Presciption</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Abdul A. Pangandaman</td>
-                                    <td>Bate</td>
-                                    <td>Nasakit</td>
-                                    <td>Male</td>
-                                    <td>23</td>
-                                    <td>Cebu, Philippines</td>
-                                    <td>09213410341</td>
-                                    <td>example@outlook.com</td>
-                                    <td>Rest WELL</td>
-                                </tr>
+                                @foreach ($patients as $patient)
+                                    <tr>
+                                        <td>{{ $patient->id }}</td>
+                                        <td>{{ $patient->doctor->first_name }}</td>
+                                        <td>{{ $patient->first_name }}</td>
+                                        <td>{{ $patient->middle_name }}</td>
+                                        <td>{{ $patient->last_name }}</td>
+                                        <td>
+                                            @if ($patient->sex == '0')
+                                                <p>Male</p>
+                                            @elseif($patient->sex == '1')
+                                                <p>Female</p>
+                                            @endif
+                                        </td>
+                                        <td>{{ $patient->age }}</td>
+                                        <td>{{ $patient->address }}</td>
+                                        <td>{{ $patient->contact_number }}</td>
+                                        <td>{{ $patient->email }}</td>
+                                        <td>{{ $patient->prescription }}</td>
+                                        <td>
+                                            <a href="{{ route('patients.edit', $patient->id) }}"
+                                                class="btn btn-primary">Edit</a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="submit" value="Delete" class="btn btn-danger">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

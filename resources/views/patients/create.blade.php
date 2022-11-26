@@ -11,9 +11,9 @@
         <form action="{{ route('patients.store') }}" method="POST">
             @csrf
             <div class="row">
-                <div class="col-3">
+                {{-- <div class="col-3">
                     <img src="https://source.unsplash.com/collection/190727/1000x900" class="d-block img-fluid" alt="image">
-                </div>
+                </div> --}}
                 <div class="col-4">
                     <div class="input-group mb-3">
                         <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
@@ -35,8 +35,8 @@
                     </div>
                     <div class="input-group mb-3">
                         <select class="form-select" name="sex" aria-label="Default select example">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
                         </select>
                     </div>
                 </div>
@@ -57,7 +57,10 @@
                         <input type="text" name="prescription" class="form-control" placeholder="Presciption">
                     </div>
                 </div>
-                <div class="d-grid col-3 mx-auto">
+                {{-- <div class="d-grid col-3 mx-auto">
+                    <button class="btn btn-primary mt-4" type="submit"><span></span>Save Record</button>
+                </div> --}}
+                <div class="d-grid">
                     <button class="btn btn-primary mt-4" type="submit"><span></span>Save Record</button>
                 </div>
             </div>

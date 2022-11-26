@@ -30,8 +30,11 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
     Route::get('/add-patients', [PatientController::class, 'create'])->name('patients.create');
     Route::post('/patients', [PatientController::class, 'store'])->name('patients.store');
+    Route::get('/patients/{id}', [PatientController::class, 'edit'])->name('patients.edit');
+    Route::put('/patients/{id}', [PatientController::class, 'update'])->name('patients.update');
+    Route::delete('/patients/{id}', [PatientController::class, 'destroy'])->name('patients.destroy');
 
-    // Patient
+    // Appointment
     Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
     Route::get('/add-appointments', [AppointmentController::class, 'create'])->name('appointments.create');
 });
