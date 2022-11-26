@@ -18,6 +18,9 @@
     {{-- Template Bundle --}}
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+    {{-- Font awesome --}}
+    <script src="https://kit.fontawesome.com/d8170c95f7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

@@ -6,16 +6,16 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
-                @if (session('message-delete'))
-                    <h6 class="alert alert-danger">{{ session('status') }}</h6>
+                @if (session('status'))
+                    <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
-                @if (session('message'))
-                    <h6 class="alert alert-success">{{ session('status_2') }}</h6>
+                @if (session('status_delete'))
+                    <h6 class="alert alert-danger">{{ session('status_delete') }}</h6>
                 @endif
                 <div class="card">
                     <div class="card-header">
                         <h4>View Patient
-                            <a href="#" class="btn btn-sm btn-primary float-end">Add Patient</a>
+                            <a href="{{ route('patients.create') }}" class="btn btn-sm btn-primary float-end">Add Patient</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -60,14 +60,16 @@
                                         <td>{{ $patient->email }}</td>
                                         <td>{{ $patient->prescription }}</td>
                                         <td>
-                                            <a href="{{ route('patients.edit', $patient->id) }}"
-                                                class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
+                                                <i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
                                         <td>
                                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <input type="submit" value="Delete" class="btn btn-danger">
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa-solid fa-trash"></i></button>
+                                                {{-- <input type="submit" value="Delete" class="btn btn-danger"> --}}
                                             </form>
                                         </td>
                                     </tr>

@@ -1,7 +1,8 @@
 @extends('layouts.admin')
-@section('title', 'View Specialist')
-@section('content')
 
+@section('title', 'View Specialist')
+
+@section('content')
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
@@ -19,8 +20,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>View Specialist
-                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end">Add
-                                Specialist</a>
+                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end">
+                                Add Specialist</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -53,14 +54,17 @@
                                             <ul class="list-inline m-0">
                                                 <li class="list-inline-item">
                                                     <a href="{{ route('doctors.edit', $doctor->id) }}"
-                                                        class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                        class="btn btn-primary"><i
+                                                            class="fa-solid fa-pen-to-square"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <form action="{{ route('doctors.doctorsDelete', $doctor->id) }}" method="POST">
+                                                    <form action="{{ route('doctors.doctorsDelete', $doctor->id) }}"
+                                                        method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <input type="submit" value="Delete" class="btn btn-danger"
-                                                           >
+                                                        <button type="submit" class="btn btn-danger">
+                                                            <i class="fa-solid fa-trash"></i></button>
+                                                        {{-- <input type="submit" value="Delete" class="btn btn-danger"> --}}
                                                     </form>
                                                 </li>
                                             </ul>
