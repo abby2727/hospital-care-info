@@ -5,27 +5,23 @@ namespace App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Appointment extends Model
 {
     use HasFactory;
 
+    protected $dates = ['appointment_date'];
+
     protected $fillable = [
-        'doctor_id',
         'name',
-        'first_name',
-        'middle_name',
-        'last_name',
         'sex',
         'age',
         'address',
         'contact_number',
-        'email',
-        'prescription',
-        'diagnosis',
+        'appointment_date',
     ];
 
-    public function doctor()
+    public function patient()
     {
-        return $this->belongsTo(Doctor::class);
+        return $this->belongsTo(Patient::class);
     }
 }

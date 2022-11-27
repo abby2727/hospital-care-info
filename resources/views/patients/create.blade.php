@@ -20,7 +20,7 @@
                         <select class="form-select" name="doctor_id" aria-label="Default select example">
                             <option value="" disabled selected>Select Specialist</option>
                             @foreach ($doctors as $doctor)
-                                <option value="{{ $doctor->id }}">{{ $doctor->first_name }}</option>
+                                <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -55,6 +55,9 @@
                     </div>
                     <div class="input-group mb-3">
                         <input type="text" name="prescription" class="form-control" placeholder="Presciption">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="diagnosis" class="form-control" placeholder="Diagnosis">
                     </div>
                 </div>
                 {{-- <div class="d-grid col-3 mx-auto">

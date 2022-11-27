@@ -36,9 +36,9 @@
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Presciption</th>
+                                    <th>Diagnosis</th>
                                     <th>Date Added</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Action</th>
                                     <th>QRCODE</th>
                                 </tr>
                             </thead>
@@ -60,12 +60,12 @@
                                         <td>{{ $patient->contact_number }}</td>
                                         <td>{{ $patient->email }}</td>
                                         <td>{{ $patient->prescription }}</td>
+                                        <td>{{ $patient->diagnosis }}</td>
+                                        {{-- <td>{{ $patient->created_at->format('F d,Y h:i A') }}</td> --}}
                                         <td>{{ $patient->created_at->format('F d,Y') }}</td>
                                         <td>
                                             <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
-                                        </td>
-                                        <td>
                                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
