@@ -12,11 +12,6 @@
                 @if (session('status'))
                     <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
-                @if (session('update'))
-                    <div class="alert alert-primary" role="alert">
-                        {{ session('update') }}
-                    </div>
-                @endif
                 <div class="card">
                     <div class="card-header">
                         <h4>View Specialist
@@ -28,8 +23,10 @@
                         <table id="articleDataTable" class="table table-bordered table-striped" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    {{-- <th>First Name</th>
+                                    <th>Last Name</th> --}}
                                     <th>Age</th>
                                     <th>Sex</th>
                                     <th>Contact Number</th>
@@ -41,8 +38,10 @@
                             <tbody>
                                 @foreach ($doctors as $doctor)
                                     <tr>
-                                        <td>{{ $doctor->first_name }}</td>
-                                        <td>{{ $doctor->last_name }}</td>
+                                        <td>{{ $doctor->id }}</td>
+                                        <td>{{ $doctor->name }}</td>
+                                        {{-- <td>{{ $doctor->first_name }}</td>
+                                        <td>{{ $doctor->last_name }}</td> --}}
                                         <td>{{ $doctor->age }}</td>
                                         <td>
                                             {{ $doctor->sex }}

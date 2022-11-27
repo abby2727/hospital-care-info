@@ -31,6 +31,8 @@ class PatientController extends Controller
         $patients->first_name = $request->input('first-name');
         $patients->middle_name = $request->input('middle-name');
         $patients->last_name = $request->input('last-name');
+        $patients->name = $patients->first_name . " " . $patients->last_name;
+        // dd($patients->name);
         $patients->sex = $request->input('sex');
         $patients->age = $request->input('age');
         $patients->address = $request->input('address');
@@ -58,6 +60,7 @@ class PatientController extends Controller
         $patients->first_name = $request->input('first-name');
         $patients->middle_name = $request->input('middle-name');
         $patients->last_name = $request->input('last-name');
+        $patients->name = $patients->first_name . " " . $patients->last_name;
         $patients->sex = $request->input('sex');
         $patients->age = $request->input('age');
         $patients->address = $request->input('address');

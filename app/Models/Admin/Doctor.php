@@ -19,4 +19,9 @@ class Doctor extends Model
         'email',
         'specialties',
     ];
+
+    public function patients()
+    {
+        return $this->hasMany(Patient::class);
+    }
 }

@@ -25,16 +25,18 @@
                                 @endforeach --}}
                                 <tr>
                                     <th>ID</th>
-                                    <th>Doctor Name</th>
-                                    <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Last Name</th>
+                                    <th>Specialist</th>
+                                    <th>Name</th>
+                                    {{-- <th>First Name</th> --}}
+                                    {{-- <th>Middle Name</th> --}}
+                                    {{-- <th>Last Name</th> --}}
                                     <th>Sex</th>
                                     <th>Age</th>
                                     <th>Address</th>
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Presciption</th>
+                                    <th>Date Added</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -43,10 +45,11 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         <td>{{ $patient->id }}</td>
-                                        <td>{{ $patient->doctor->first_name }}</td>
-                                        <td>{{ $patient->first_name }}</td>
-                                        <td>{{ $patient->middle_name }}</td>
-                                        <td>{{ $patient->last_name }}</td>
+                                        <td>{{ $patient->doctor->name }}</td>
+                                        <td>{{ $patient->name }}</td>
+                                        {{-- <td>{{ $patient->first_name }}</td> --}}
+                                        {{-- <td>{{ $patient->middle_name }}</td> --}}
+                                        {{-- <td>{{ $patient->last_name }}</td> --}}
                                         <td>
                                             @if ($patient->sex == '0')
                                                 <p>Male</p>
@@ -59,6 +62,8 @@
                                         <td>{{ $patient->contact_number }}</td>
                                         <td>{{ $patient->email }}</td>
                                         <td>{{ $patient->prescription }}</td>
+                                        {{-- <td>{{ $patient->created_at->format('F d,Y h:i A') }}</td> --}}
+                                        <td>{{ $patient->created_at->format('F d,Y') }}</td>
                                         <td>
                                             <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
