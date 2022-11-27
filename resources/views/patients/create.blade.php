@@ -5,7 +5,7 @@
 @section('content')
 <style>
     body {
-        background-image: url('../assets/img/bg1.png');
+        background-image: url('../assets/img/pbg.png');
         background-size: cover;
     }
 </style>
@@ -102,7 +102,7 @@
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">Presciption</label>
                 <div class="input-group mb-3">
-                    <input type="text" name="prescription" class="form-control" >
+                    <input type="text" name="prescription" class="form-control">
                 </div>
             </div>
             {{-- <div class="d-grid col-3 mx-auto">

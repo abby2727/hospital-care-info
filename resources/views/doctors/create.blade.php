@@ -6,7 +6,7 @@
 
 <style>
     body {
-        background-image: url('../assets/img/bg1.png');
+        background-image: url('../assets/img/pbg.png');
         background-size: cover;
     }
 </style>
@@ -81,7 +81,7 @@
             </div>
 
         </div>
-        <div class="d-grid col-3 mx-auto">
+        <div class="d-grid col-4 mx-auto">
             <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Save Record</button>
         </div>
     </form>
