@@ -3,6 +3,13 @@
 @section('title', 'Add Specialist')
 
 @section('content')
+
+<style>
+    body {
+        background-image: url('../assets/img/bg1.png');
+        background-size: cover;
+    }
+</style>
 <div class="container-fluid px-4">
     <div class="text-center p-4">
         <h3 class="text-primary fw-bold">REGISTER SPECIALIST</h3>
