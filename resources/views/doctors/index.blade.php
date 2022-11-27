@@ -3,6 +3,12 @@
 @section('title', 'View Specialist')
 
 @section('content')
+<style>
+    body {
+        background-image: url('../assets/img/bg.png');
+        background-size: cover;
+    }
+</style>
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
@@ -13,14 +19,14 @@
                     <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header fw-bold">
                         <h4>View Specialist
-                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end">
+                            <a href="{{ route('doctors.create') }}" class="btn btn-sm btn-primary float-end fw-bold">
                                 Add Specialist</a>
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="articleDataTable" class="table table-bordered table-striped" style="width: 100%;">
+                        <table id="articleDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th>ID</th>
