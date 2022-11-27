@@ -35,6 +35,7 @@ class AppointmentController extends Controller
         $appointments->appointment_date = $request->input('appointment_date');
         $appointments->save();
         return redirect()->route('appointments.index')->with('status', 'Appointment added successfully!');
+        
     }
     public function edit($id)
     {

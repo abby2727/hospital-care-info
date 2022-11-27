@@ -25,13 +25,13 @@
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="first-name" class="form-control" placeholder="First Name">
+                        <input type="text" name="first-name" class="form-control" placeholder="First Name"required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="middle-name" class="form-control" placeholder="Middle Name">
+                        <input type="text" name="middle-name" class="form-control" placeholder="Middle Name" required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="last-name" class="form-control" placeholder="Last Name">
+                        <input type="text" name="last-name" class="form-control" placeholder="Last Name" required>
                     </div>
                     <div class="input-group mb-3">
                         <select class="form-select" name="sex" aria-label="Default select example">
@@ -42,22 +42,22 @@
                 </div>
                 <div class="col-5">
                     <div class="input-group mb-3">
-                        <input type="number" name="age" class="form-control" placeholder="Age">
+                        <input type="number" name="age" class="form-control" placeholder="Age"required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="address" class="form-control" placeholder="Address">
+                        <input type="text" name="address" class="form-control" placeholder="Address"required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="number" name="number" class="form-control" placeholder="Contact Number">
+                        <input type="number" name="number" class="form-control" placeholder="Contact Number"required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email"required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="prescription" class="form-control" placeholder="Presciption">
+                        <input type="text" name="prescription" class="form-control" placeholder="Presciption" required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="diagnosis" class="form-control" placeholder="Diagnosis">
+                        <input type="text" name="diagnosis" class="form-control" placeholder="Diagnosis" required>
                     </div>
                 </div>
                 {{-- <div class="d-grid col-3 mx-auto">

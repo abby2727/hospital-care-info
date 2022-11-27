@@ -12,6 +12,9 @@
                 @if (session('status_delete'))
                     <h6 class="alert alert-danger">{{ session('status_delete') }}</h6>
                 @endif
+                @if (session('existed'))
+                    <h6 class="alert alert-danger">{{ session('existed') }}</h6>
+                @endif
                 <div class="card">
                     <div class="card-header">
                         <h4>View Appointment
@@ -56,7 +59,8 @@
                                                 class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <form action="{{ route('appointments.destroy', $appointment->id) }}" method="POST">
+                                            <form action="{{ route('appointments.destroy', $appointment->id) }}"
+                                                method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">
@@ -65,8 +69,7 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('appointment.appointmentsqr', $appointment->id) }}"
-                                                class="btn btn-dark"><i
-                                                    class="fa-solid fa-qrcode"></i></a>
+                                                class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
