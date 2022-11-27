@@ -43,6 +43,7 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/appointments/{id}', [AppointmentController::class, 'edit'])->name('appointments.edit');
     Route::put('/appointments/{id}', [AppointmentController::class, 'update'])->name('appointments.update');
     Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+    Route::get('/appointmentsqr/{id}', [AppointmentController::class, 'qr'])->name('appointment.appointmentsqr');
 });
 
 Route::get('/doctors', function () {

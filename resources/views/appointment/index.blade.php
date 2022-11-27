@@ -31,6 +31,7 @@
                                     <th>Contact Number</th>
                                     <th>Appointment Date</th>
                                     <th>Action</th>
+                                    <th>QRCODE</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,6 +62,11 @@
                                                 <button type="submit" class="btn btn-danger">
                                                     <i class="fa-solid fa-trash"></i></button>
                                             </form>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('appointment.appointmentsqr', $appointment->id) }}"
+                                                class="btn btn-dark"><i
+                                                    class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
