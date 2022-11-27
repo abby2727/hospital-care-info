@@ -18,7 +18,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a> --}}
-                <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}"
                     href="{{ url('admin/') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
