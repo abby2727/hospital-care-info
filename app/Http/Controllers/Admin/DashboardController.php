@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Admin\Appointment;
+use App\Models\Admin\Patient;
 
 class DashboardController extends Controller
 {
-    public function index() 
+    public function index()
     {
-        return view('admin.dashboard');
+        $patient = Patient::count();
+        $appointment = Appointment::count();
+
+        return view('admin.dashboard', compact('patient', 'appointment'));
     }
 }

@@ -18,8 +18,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a> --}}
-                <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}"
-                    href="{{ url('admin/dashboard') }}">
+                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}"
+                    href="{{ url('admin/') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -29,7 +29,7 @@
                 <a class="nav-link collapsed {{ Request::is('admin/doctors') || Request::is('admin/add-doctors') || Request::is('admin/doctors/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctors" aria-expanded="false"
                     aria-controls="collapseDoctors">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Doctors
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -47,7 +47,7 @@
                 <a class="nav-link collapsed {{ Request::is('admin/patients') || Request::is('admin/add-patients') || Request::is('admin/patients/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients" aria-expanded="false"
                     aria-controls="collapsePatients">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Patients
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -76,7 +76,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{ Request::is('admin/add-appointments') ? 'active' : '' }}"
                             href="{{ route('appointments.create') }}">Add Appointment</a>
-                        <a class="nav-link {{ Request::is('admin/appointments') ? 'active' : '' }}"
+                        <a class="nav-link {{ Request::is('admin/appointments') || Request::is('admin/appointments/*') ? 'active' : '' }}"
                             href="{{ route('appointments.index') }}">List of Appointment</a>
                     </nav>
                 </div>

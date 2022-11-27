@@ -38,6 +38,7 @@
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Specialties</th>
+                                    <th>Date Added</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -49,12 +50,20 @@
                                         {{-- <td>{{ $doctor->first_name }}</td>
                                         <td>{{ $doctor->last_name }}</td> --}}
                                         <td>{{ $doctor->age }}</td>
-                                        <td>
+                                        {{-- <td>
                                             {{ $doctor->sex }}
+                                        </td> --}}
+                                        <td>
+                                            @if ($doctor->sex == '0')
+                                                <p>Male</p>
+                                            @elseif($doctor->sex == '1')
+                                                <p>Female</p>
+                                            @endif
                                         </td>
                                         <td>{{ $doctor->contact_number }}</td>
                                         <td>{{ $doctor->email }}</td>
                                         <td>{{ $doctor->specialties }}</td>
+                                        <td>{{ $doctor->created_at->format('F d,Y') }}</td>
                                         <td>
                                             <ul class="list-inline m-0">
                                                 <li class="list-inline-item">
@@ -69,7 +78,6 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">
                                                             <i class="fa-solid fa-trash"></i></button>
-                                                        {{-- <input type="submit" value="Delete" class="btn btn-danger"> --}}
                                                     </form>
                                                 </li>
                                             </ul>

@@ -39,6 +39,7 @@ class PatientController extends Controller
         $patients->contact_number = $request->input('number');
         $patients->email = $request->input('email');
         $patients->prescription = $request->input('prescription');
+        $patients->diagnosis = $request->input('diagnosis');
 
         $patients->save();
         return redirect()->route('patients.index')->with('status', 'Patient added successfully!');
@@ -67,6 +68,7 @@ class PatientController extends Controller
         $patients->contact_number = $request->input('number');
         $patients->email = $request->input('email');
         $patients->prescription = $request->input('prescription');
+        $patients->diagnosis = $request->input('diagnosis');
 
         $patients->update();
         return redirect()->route('patients.index')->with('status', 'Patient updated successfully!');
@@ -79,4 +81,15 @@ class PatientController extends Controller
         $patients->delete();
         return redirect()->route('patients.index')->with('status_delete', 'Patient deleted successfully!');
     }
+
+
+    public function qr($id)
+    {
+        $patients = Patient::find($id);
+        $doctors = Doctor::all();
+        return view('patients.qr', compact('patients', 'doctors'));
+    }
+
+
+
 }
