@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Patients')
+@section('title', 'Add Appointment')
 
 @section('content')
     <div class="container-fluid px-4">
         <div class="text-center p-4">
-            <h3 class="text-primary">REGISTER PATIENT</h3>
+            <h3 class="text-primary">ADD APPOINTMENT</h3>
         </div>
 
-        <form action="{{ route('patients.store') }}" method="POST">
+        <form action="" method="POST">
             @csrf
             <div class="row">
                 {{-- <div class="col-3">
@@ -19,9 +19,10 @@
                         <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                         <select class="form-select" name="doctor_id" aria-label="Default select example">
                             <option value="" disabled selected>Select Specialist</option>
-                            @foreach ($doctors as $doctor)
+                            <option value="">TEST</option>
+                            {{-- @foreach ($doctors as $doctor)
                                 <option value="{{ $doctor->id }}">{{ $doctor->first_name }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                     </div>
                     <div class="input-group mb-3">
