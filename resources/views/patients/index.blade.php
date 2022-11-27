@@ -39,6 +39,7 @@
                                     <th>Date Added</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
+                                    <th>QRCODE</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,9 +48,6 @@
                                         <td>{{ $patient->id }}</td>
                                         <td>{{ $patient->doctor->name }}</td>
                                         <td>{{ $patient->name }}</td>
-                                        {{-- <td>{{ $patient->first_name }}</td> --}}
-                                        {{-- <td>{{ $patient->middle_name }}</td> --}}
-                                        {{-- <td>{{ $patient->last_name }}</td> --}}
                                         <td>
                                             @if ($patient->sex == '0')
                                                 <p>Male</p>
@@ -62,7 +60,6 @@
                                         <td>{{ $patient->contact_number }}</td>
                                         <td>{{ $patient->email }}</td>
                                         <td>{{ $patient->prescription }}</td>
-                                        {{-- <td>{{ $patient->created_at->format('F d,Y h:i A') }}</td> --}}
                                         <td>{{ $patient->created_at->format('F d,Y') }}</td>
                                         <td>
                                             <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
@@ -74,8 +71,12 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">
                                                     <i class="fa-solid fa-trash"></i></button>
-                                                {{-- <input type="submit" value="Delete" class="btn btn-danger"> --}}
                                             </form>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('patients.patientsqr', $patient->id) }}"
+                                                class="btn btn-dark"><i
+                                                    class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -34,6 +34,7 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/patients/{id}', [PatientController::class, 'edit'])->name('patients.edit');
     Route::put('/patients/{id}', [PatientController::class, 'update'])->name('patients.update');
     Route::delete('/patients/{id}', [PatientController::class, 'destroy'])->name('patients.destroy');
+    Route::get('/patientsqr/{id}', [PatientController::class, 'qr'])->name('patients.patientsqr');
 
     // Appointment
     Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');

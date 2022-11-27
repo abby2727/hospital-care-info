@@ -79,4 +79,15 @@ class PatientController extends Controller
         $patients->delete();
         return redirect()->route('patients.index')->with('status_delete', 'Patient deleted successfully!');
     }
+
+
+    public function qr($id)
+    {
+        $patients = Patient::find($id);
+        $doctors = Doctor::all();
+        return view('patients.qr', compact('patients', 'doctors'));
+    }
+
+
+
 }
