@@ -19,7 +19,7 @@
                     Dashboard
                 </a> --}}
                 <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}"
-                    href="{{ url('admin/dashboard') }}">
+                    href="{{ url('admin/') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -76,7 +76,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{ Request::is('admin/add-appointments') ? 'active' : '' }}"
                             href="{{ route('appointments.create') }}">Add Appointment</a>
-                        <a class="nav-link {{ Request::is('admin/appointments') ? 'active' : '' }}"
+                        <a class="nav-link {{ Request::is('admin/appointments') || Request::is('admin/appointments/*') ? 'active' : '' }}"
                             href="{{ route('appointments.index') }}">List of Appointment</a>
                     </nav>
                 </div>

@@ -22,7 +22,7 @@
                             <option value="" disabled selected>Select Specialist</option>
                             @foreach ($doctors as $doctor)
                                 <option value="{{ $doctor->id }}"{{ $patients->doctor_id == $doctor->id ? 'selected' : '' }}>
-                                    {{ $doctor->first_name }}</option>
+                                    {{ $doctor->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -65,6 +65,10 @@
                     <div class="input-group mb-3">
                         <input type="text" name="prescription" value="{{ $patients->prescription }}"
                             class="form-control" placeholder="Presciption">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="diagnosis" value="{{ $patients->diagnosis }}"
+                            class="form-control" placeholder="Diagnosis">
                     </div>
                 </div>
                 {{-- <div class="d-grid col-3 mx-auto">
