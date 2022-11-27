@@ -29,7 +29,7 @@
                 <a class="nav-link collapsed {{ Request::is('admin/doctors') || Request::is('admin/add-doctors') || Request::is('admin/doctors/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctors" aria-expanded="false"
                     aria-controls="collapseDoctors">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Doctors
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -47,7 +47,7 @@
                 <a class="nav-link collapsed {{ Request::is('admin/patients') || Request::is('admin/add-patients') || Request::is('admin/patients/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients" aria-expanded="false"
                     aria-controls="collapsePatients">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Patients
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
