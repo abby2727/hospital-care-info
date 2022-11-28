@@ -18,7 +18,7 @@
         @csrf
         <div class="row d-flex justify-content-center align-content-center">
             {{-- <div class="col-3">
-                    <img src="https://source.unsplash.com/collection/190727/1000x900" class="d-block img-fluid" alt="image">
+                    <img src="../assets/img/bg.png" class="d-block img-fluid" alt="image">
                 </div> --}}
             <div class="col-4">
                 <label for="exampleInputEmail1" class="fw-bold">Contact Number</label>

@@ -3,10 +3,16 @@
 @section('title', 'Update Patients')
 
 @section('content')
-
+<style>
+    body {
+        background-image: url('../../assets/img/pbg.png');
+        background-size: cover;
+    }
+</style>
 <div class="container-fluid px-4">
     <div class="text-center p-4">
         <h3 class="text-primary">UPDATE PATIENT</h3>
+        <img src="../../assets/img/patient.png" class="rounded mx-auto d-block" alt="image" style="width: 150px; height: 150px">
     </div>
 
     <form action="{{ route('patients.update', $patients->id) }}" method="POST">
@@ -14,7 +20,7 @@
         @method('PUT')
         <div class="row d-flex justify-content-center align-content-center ">
             {{-- <div class="col-3">
-                    <img src="https://source.unsplash.com/collection/190727/1000x900" class="d-block img-fluid" alt="image">
+                    <img src="" class="d-block img-fluid" alt="image">
                 </div> --}}
             <div class="col-4">
                 <label for="exampleInputEmail1" class="fw-bold">Specialist</label>
