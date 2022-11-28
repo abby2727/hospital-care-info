@@ -68,11 +68,10 @@
                                 <td>{{ $patient->created_at->format('F d,Y') }}</td>
                             
                                 <td>
-                                    <ul class="row d-flex justify-content-between">
+                                    <ul class=" justify-content-center">
                                         <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
                                             <i class="fa-solid fa-pen-to-square"></i></a>
-                                        </li>
-                                        <li class="list-inline-item">
+                                       
                                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
