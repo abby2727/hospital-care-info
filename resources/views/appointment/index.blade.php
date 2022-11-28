@@ -16,14 +16,14 @@
                     <h6 class="alert alert-danger">{{ session('existed') }}</h6>
                 @endif
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header fw-bold">
                         <h4>View Appointment
-                            <a href="{{ route('appointments.create') }}" class="btn btn-sm btn-primary float-end">Add
+                            <a href="{{ route('appointments.create') }}" class="btn btn-sm btn-primary float-end fw-bold">Add
                                 Appointment</a>
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="" class="table table-bordered table-striped" style="width: 100%;">
+                        <table id="" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th>ID</th>
