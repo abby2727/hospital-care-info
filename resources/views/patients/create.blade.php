@@ -23,7 +23,7 @@
                 </div> --}}
 
             <div class="col-4">
-                
+
                 <label for="exampleInputEmail1" class="fw-bold">Specialist</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
@@ -56,6 +56,10 @@
             </div>
 
             <div class="col-5">
+                <label for="exampleInputEmail1" class="fw-bold">Diagnosis</label>
+                <div class="input-group mb-3">
+                    <input type="text" name="diagnosis" class="form-control" required>
+                </div>
                 <label for="exampleInputEmail1" class="fw-bold">Age</label>
                 <div class="input-group mb-3">
                     <input type="number" name="age" class="form-control">
