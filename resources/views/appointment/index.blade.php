@@ -3,6 +3,12 @@
 @section('title', 'View Appointment')
 
 @section('content')
+<style>
+    body {
+        background-image: url('../assets/img/bg.png');
+        background-size: cover;
+    }
+</style>
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
