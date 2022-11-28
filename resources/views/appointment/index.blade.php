@@ -34,7 +34,7 @@
                         <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    {{-- <th>ID</th> --}}
                                     <th>Patient Name</th>
                                     <th>Sex</th>
                                     <th>Age</th>
@@ -48,7 +48,7 @@
                             <tbody>
                                 @foreach ($appointments as $appointment)
                                     <tr>
-                                        <td>{{ $appointment->id }}</td>
+                                        {{-- <td>{{ $appointment->id }}</td> --}}
                                         <td>{{ $appointment->patient->name }}</td>
                                         <td>
                                             @if ($appointment->sex == '0')

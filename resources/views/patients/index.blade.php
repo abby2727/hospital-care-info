@@ -30,7 +30,7 @@
                                 {{-- @foreach ($patients as $patient)
                                 @endforeach --}}
                                 <tr>
-                                    <th>ID</th>
+                                    {{-- <th>ID</th> --}}
                                     <th>Specialist</th>
                                     <th>Name</th>
                                     {{-- <th>First Name</th> --}}
@@ -51,7 +51,7 @@
                             <tbody>
                                 @foreach ($patients as $patient)
                                     <tr>
-                                        <td>{{ $patient->id }}</td>
+                                        {{-- <td>{{ $patient->id }}</td> --}}
                                         <td>{{ $patient->doctor->name }}</td>
                                         <td>{{ $patient->name }}</td>
                                         <td>
