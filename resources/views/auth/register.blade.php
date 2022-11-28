@@ -1,7 +1,7 @@
 @extends('layouts.app')
 <style>
     body {
-        background-image: url('assets/img/regis_bg.png');
+        background-image: url('assets/img/rgb.png');
         background-size: cover;
     }
 </style>
