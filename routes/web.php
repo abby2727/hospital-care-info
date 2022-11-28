@@ -4,13 +4,16 @@ use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\PatientController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [LoginController::class, 'loginPage']);
 
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
