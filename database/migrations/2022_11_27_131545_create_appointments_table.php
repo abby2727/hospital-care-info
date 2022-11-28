@@ -14,8 +14,10 @@ class CreateAppointmentsTable extends Migration
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
+            // $table->engine = 'InnoDB';
             $table->id();
-            $table->integer('patient_id');
+            // $table->integer('patient_id');
+            $table->foreignId('patient_id')->constrained()->onDelete('cascade');
             // $table->string('name');
             $table->tinyInteger('sex')->default('0');
             $table->integer('age');
