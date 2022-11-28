@@ -69,9 +69,7 @@
                 <div class="input-group mb-3">
                     <input type="text" name="prescription" value="{{ $patients->prescription }}" class="form-control" placeholder="Presciption">
                 </div>
-                <div class="input-group mb-3">
-                    <input type="text" name="diagnosis" value="{{ $patients->diagnosis}}" class="form-control" placeholder="Diagnosis">
-                </div>
+                
             </div>
             <div class="col-5">
                 <label for="exampleInputEmail1" class="fw-bold text-center">Diagnosis</label>
