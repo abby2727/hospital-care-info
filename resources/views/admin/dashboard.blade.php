@@ -5,7 +5,7 @@
 @section('content')
 <style>
     body {
-        background-image: url('../assets/img/bg.png');
+        background-image: url('../assets/img/pbg.png');
         background-size: cover;
     }
 </style>
