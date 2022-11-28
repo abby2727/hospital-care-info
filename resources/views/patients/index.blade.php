@@ -49,8 +49,8 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         {{-- <td>{{ $patient->id }}</td> --}}
-                                        <td>{{ $patient->doctor->name }}</td>
                                         <td>{{ $patient->name }}</td>
+                                        <td>{{ $patient->doctor->name }}</td>
                                         <td>
                                             @if ($patient->sex == '0')
                                                 <p>Male</p>

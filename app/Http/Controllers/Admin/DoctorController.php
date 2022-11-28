@@ -10,7 +10,7 @@ class DoctorController extends Controller
 {
     public function index()
     {
-        $doctors = Doctor::orderBy('id', 'ASC')->get();
+        $doctors = Doctor::orderBy('id', 'DESC')->get();
 
         return view('doctors.index', compact('doctors'));
     }

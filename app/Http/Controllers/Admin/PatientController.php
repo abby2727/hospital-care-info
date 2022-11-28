@@ -11,7 +11,7 @@ class PatientController extends Controller
 {
     public function index()
     {
-        $patients = Patient::orderBy('id', 'ASC')->get();
+        $patients = Patient::orderBy('id', 'DESC')->get();
 
         return view('patients.index', compact('patients'));
     }
