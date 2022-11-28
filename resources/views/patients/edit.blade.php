@@ -35,15 +35,19 @@
                         @endforeach
                     </select>
                 </div>
+                <label for="exampleInputEmail1" class="fw-bold">First Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="first-name" value="{{ $patients->first_name }}" class="form-control" placeholder="First Name">
                 </div>
+                <label for="exampleInputEmail1" class="fw-bold">Middle Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="middle-name" value="{{ $patients->middle_name }}" class="form-control" placeholder="Middle Name">
                 </div>
+                <label for="exampleInputEmail1" class="fw-bold">Last Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="last-name" value="{{ $patients->last_name }}" class="form-control" placeholder="Last Name">
                 </div>
+                <label for="exampleInputEmail1" class="fw-bold">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" name="sex">
                         <option value="0" {{ $patients->sex == '0' ? 'selected' : '' }}>Male</option>
@@ -52,24 +56,31 @@
                 </div>
             </div>
             <div class="col-5">
+                <label for="exampleInputEmail1" class="fw-bold">Address</label>
+                <div class="input-group mb-3">
+                    <input type="number" name="age" value="{{ $patients->age }}" class="form-control">
+                </div>
+                <label for="exampleInputEmail1" class="fw-bold">Address</label>
 
+                <div class="input-group mb-3">
+                    <input type="text" name="address" value="{{ $patients->address }}" class="form-control">
+                </div>
+                <label for="exampleInputEmail1" class="fw-bold">Contact Number</label>
 
                 <div class="input-group mb-3">
-                    <input type="number" name="age" value="{{ $patients->age }}" class="form-control" placeholder="Age">
+                    <input type="number" name="number" value="{{ $patients->contact_number }}" class="form-control">
                 </div>
+                <label for="exampleInputEmail1" class="fw-bold">Email address</label>
+
                 <div class="input-group mb-3">
-                    <input type="text" name="address" value="{{ $patients->address }}" class="form-control" placeholder="Address">
+                    <input type="email" name="email" value="{{ $patients->email }}" class="form-control">
                 </div>
-                <div class="input-group mb-3">
-                    <input type="number" name="number" value="{{ $patients->contact_number }}" class="form-control" placeholder="Contact Number">
-                </div>
-                <div class="input-group mb-3">
-                    <input type="email" name="email" value="{{ $patients->email }}" class="form-control" placeholder="Email">
-                </div>
+                <label for="exampleInputEmail1" class="fw-bold">Presciption</label>
+
                 <div class="input-group mb-3">
                     <input type="text" name="prescription" value="{{ $patients->prescription }}" class="form-control" placeholder="Presciption">
                 </div>
-                
+
             </div>
             <div class="col-5">
                 <label for="exampleInputEmail1" class="fw-bold text-center">Diagnosis</label>
@@ -82,8 +93,8 @@
         <div class="d-grid col-3 mx-auto">
             <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Update Record</button>
         </div>
-       
+
     </form>
-    
+
 </div>
 @endsection

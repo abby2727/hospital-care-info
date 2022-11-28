@@ -36,15 +36,15 @@
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">First Name</label>
                 <div class="input-group mb-3">
-                    <input type="text" name="first-name" class="form-control" placeholder="First Name">
+                    <input type="text" name="first-name" class="form-control" >
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">Middle Name</label>
                 <div class="input-group mb-3">
-                    <input type="text" name="middle-name" class="form-control" placeholder="Middle Name">
+                    <input type="text" name="middle-name" class="form-control" >
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">Last Name</label>
                 <div class="input-group mb-3">
-                    <input type="text" name="last-name" class="form-control" placeholder="Last Name">
+                    <input type="text" name="last-name" class="form-control" >
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">Gender</label>
                 <div class="input-group mb-3">
