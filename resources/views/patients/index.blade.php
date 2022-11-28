@@ -139,7 +139,13 @@
                                         <td>
                                             <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
->>>>>>> 560304ad577cde7a4d29314edeb495fefdaead31
+                                            <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fa-solid fa-trash"></i></button>
+                                            </form>
+                                        </td>
                                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
