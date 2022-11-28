@@ -75,8 +75,9 @@
                                             <form action="{{ route('patients.destroy', $patient->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="fa-solid fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
                                             </form>
                                         </td>
                                         <td>
