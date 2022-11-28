@@ -3,6 +3,12 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<style>
+    body {
+        background-image: url('../assets/img/pbg.png');
+        background-size: cover;
+    }
+</style>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
         <div class="row">
