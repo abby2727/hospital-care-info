@@ -21,6 +21,36 @@
 
     {{-- Font awesome --}}
     <script src="https://kit.fontawesome.com/d8170c95f7.js" crossorigin="anonymous"></script>
+
+    <!-- Datatables CSS link -->
+    <link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+    <!-- Datatable custom css -->
+    <style>
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+
+        div.dataTables_wrapper div.dataTables_length select {
+            width: 50% !important;
+        }
+
+        .post-code-bg {
+            width: fit-content;
+            min-width: 100%;
+            background-color: #212121 !important;
+            width: 100% !important;
+            overflow-x: scroll !important;
+            position: relative;
+            padding: 1rem 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,11 +65,25 @@
             @include('layouts/includes/footer-admin')
         </div>
     </div>
-    
+
     {{-- Template Bundle --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myDataTable').DataTable();
+        });
+    </script>
+
+    @yield('scripts')
 </body>
 
 </html>

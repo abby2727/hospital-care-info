@@ -14,12 +14,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                {{-- <a class="nav-link" href="/admin">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Dashboard
-                </a> --}}
-                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}"
-                    href="{{ url('admin/') }}">
+                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" href="{{ url('admin/') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -29,7 +24,7 @@
                 <a class="nav-link collapsed {{ Request::is('admin/doctors') || Request::is('admin/add-doctors') || Request::is('admin/doctors/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctors" aria-expanded="false"
                     aria-controls="collapseDoctors">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-doctor"></i></div>
                     Doctors
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -47,7 +42,9 @@
                 <a class="nav-link collapsed {{ Request::is('admin/patients') || Request::is('admin/add-patients') || Request::is('admin/patients/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients" aria-expanded="false"
                     aria-controls="collapsePatients">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                    <div class="sb-nav-link-icon">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
                     Patients
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -67,7 +64,9 @@
                 <a class="nav-link collapsed {{ Request::is('admin/appointments') || Request::is('admin/add-appointments') || Request::is('admin/appointments/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapseAppointment" aria-expanded="false"
                     aria-controls="collapseAppointment">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
                     Appointment
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>

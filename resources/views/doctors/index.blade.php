@@ -26,10 +26,10 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="articleDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
+                        <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    {{-- <th>ID</th> --}}
                                     <th>Name</th>
                                     {{-- <th>First Name</th>
                                     <th>Last Name</th> --}}
@@ -45,7 +45,7 @@
                             <tbody>
                                 @foreach ($doctors as $doctor)
                                     <tr>
-                                        <td>{{ $doctor->id }}</td>
+                                        {{-- <td>{{ $doctor->id }}</td> --}}
                                         <td>{{ $doctor->name }}</td>
                                         {{-- <td>{{ $doctor->first_name }}</td>
                                         <td>{{ $doctor->last_name }}</td> --}}
@@ -76,8 +76,9 @@
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">
-                                                            <i class="fa-solid fa-trash"></i></button>
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </button>
                                                     </form>
                                                 </li>
                                             </ul>

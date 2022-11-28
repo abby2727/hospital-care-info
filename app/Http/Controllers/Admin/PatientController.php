@@ -11,7 +11,7 @@ class PatientController extends Controller
 {
     public function index()
     {
-        $patients = Patient::orderBy('id', 'ASC')->get();
+        $patients = Patient::orderBy('id', 'DESC')->get();
 
         return view('patients.index', compact('patients'));
     }
@@ -78,6 +78,7 @@ class PatientController extends Controller
     {
         $patients = Patient::find($id);
 
+        $patients->appointment()->delete();
         $patients->delete();
         return redirect()->route('patients.index')->with('status_delete', 'Patient deleted successfully!');
     }
