@@ -63,10 +63,12 @@
                                         {{-- <td>{{ $appointment->appointment_date }}</td> --}}
                                         <td>{{ $appointment->appointment_date->format('F d,Y h:i A') }}</td>
                                         <td>
+                                            <li class="d-flex">
                                             <a href="{{ route('appointments.edit', $appointment->id) }}"
                                                 class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
+                                           
                                             <form action="{{ route('appointments.destroy', $appointment->id) }}"
                                                 method="POST">
                                                 @csrf
