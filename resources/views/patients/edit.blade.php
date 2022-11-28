@@ -5,13 +5,13 @@
 @section('content')
 <style>
     body {
-        background-image: url('../../assets/img/pbg.png');
+        background-image: url('../../assets/img/edit.png');
         background-size: cover;
     }
 </style>
 <div class="container-fluid px-4">
     <div class="text-center p-4">
-        <h3 class="text-primary">UPDATE PATIENT</h3>
+        <h3 class="text-light">UPDATE PATIENT</h3>
         <img src="../../assets/img/patient.png" class="rounded mx-auto d-block" alt="image" style="width: 150px; height: 150px">
     </div>
 
@@ -91,8 +91,9 @@
 
         </div>
         <div class="d-grid col-3 mx-auto">
-            <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Update Record</button>
+            <button class="btn btn-primary mt-4 fw-bold btn-lg" type="submit"><span></span>Update Record</button>
         </div>
+        <br>
 
     </form>
 
