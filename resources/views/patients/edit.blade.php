@@ -73,14 +73,19 @@
                     <input type="text" name="diagnosis" value="{{ $patients->diagnosis}}" class="form-control" placeholder="Diagnosis">
                 </div>
             </div>
-            {{-- <div class="d-grid col-3 mx-auto">
-                    <button class="btn btn-primary mt-4" type="submit"><span></span>Update Record</button>
-                </div> --}}
+            <div class="col-5">
+                <label for="exampleInputEmail1" class="fw-bold text-center">Diagnosis</label>
+                <div class="input-group mb-2">
+                    <input type="text" name="diagnosis" value="{{ $patients->diagnosis }}" class="form-control" required>
+                </div>
+            </div>
 
         </div>
         <div class="d-grid col-3 mx-auto">
             <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Update Record</button>
         </div>
+       
     </form>
+    
 </div>
 @endsection

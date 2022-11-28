@@ -81,9 +81,13 @@
                     <input type="text" name="prescription" class="form-control">
                 </div>
             </div>
-            {{-- <div class="d-grid col-3 mx-auto">
-                    <button class="btn btn-primary mt-4" type="submit"><span></span>Save Record</button>
-                </div> --}}
+
+            <div class="col-5 pb-1">
+                <label for="exampleInputEmail1" class="fw-bold text-center">Diagnosis</label>
+                <div class="input-group mb-2">
+                    <input type="text" name="diagnosis" class="form-control" required>
+                </div>
+            </div>
 
         </div>
         <div class="d-grid col-3 mx-auto">
