@@ -78,6 +78,7 @@ class PatientController extends Controller
     {
         $patients = Patient::find($id);
 
+        $patients->appointment()->delete();
         $patients->delete();
         return redirect()->route('patients.index')->with('status_delete', 'Patient deleted successfully!');
     }

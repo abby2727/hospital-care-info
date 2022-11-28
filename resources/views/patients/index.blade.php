@@ -31,11 +31,8 @@
                                 @endforeach --}}
                                 <tr>
                                     {{-- <th>ID</th> --}}
-                                    <th>Specialist</th>
-                                    <th>Name</th>
-                                    {{-- <th>First Name</th> --}}
-                                    {{-- <th>Middle Name</th> --}}
-                                    {{-- <th>Last Name</th> --}}
+                                    <th>Patient Name</th>
+                                    <th>Specialist Assign</th>
                                     <th>Sex</th>
                                     <th>Age</th>
                                     <th>Address</th>
