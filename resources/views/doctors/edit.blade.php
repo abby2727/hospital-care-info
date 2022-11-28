@@ -5,7 +5,7 @@
 @section('content')
 <style>
     body {
-        background-image: url('../../assets/img/pbg.png');
+        background-image: url('../../assets/img/edit.png');
         background-size: cover;
     }
 </style>
@@ -81,7 +81,7 @@
 
         </div>
         <div class="d-grid col-3 mx-auto">
-            <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Update Record</button>
+            <button class="btn btn-primary mt-4 fw-bold btn-lg" type="submit"><span></span>Update Record</button>
         </div>
     </form>
 

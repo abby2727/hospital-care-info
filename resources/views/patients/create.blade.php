@@ -5,7 +5,7 @@
 @section('content')
 <style>
     body {
-        background-image: url('../assets/img/pbg.png');
+        background-image: url('../assets/img/bbg.png');
         background-size: cover;
     }
 </style>
@@ -88,8 +88,9 @@
 
         </div>
         <div class="d-grid col-3 mx-auto">
-            <button class="btn btn-primary mt-4 fw-bold" type="submit"><span></span>Save Record</button>
+            <button class="btn btn-primary mt-4 fw-bold btn-lg" type="submit"><span></span>Save Record</button>
         </div>
+        <br>
     </form>
 </div>
 @endsection
