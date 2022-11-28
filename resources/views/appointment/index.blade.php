@@ -81,7 +81,7 @@
 
                                 </td>
                                 <td>
-                                    <a href="{{ route('appointment.appointmentsqr', $appointment->id) }}" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
+                                    <a href="{{ route('appointment.appointmentsqr', $appointment->id) }}" target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                 </td>
                             </tr>
                             @endforeach

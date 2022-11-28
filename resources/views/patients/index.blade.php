@@ -89,7 +89,7 @@
 
 
                                 <td>
-                                    <a href="{{ route('patients.patientsqr', $patient->id) }}" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
+                                    <a href="{{ route('patients.patientsqr', $patient->id) }}" target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                 </td>
                             </tr>
                             @endforeach
