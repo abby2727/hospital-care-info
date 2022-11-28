@@ -78,7 +78,7 @@
                 <label for="exampleInputEmail1" class="fw-bold">Presciption</label>
 
                 <div class="input-group mb-3">
-                    <input type="text" name="prescription" value="{{ $patients->prescription }}" class="form-control" placeholder="Presciption">
+                    <input type="text" name="prescription" value="{{ $patients->prescription }}" class="form-control">
                 </div>
 
             </div>
