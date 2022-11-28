@@ -31,7 +31,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="" class="table table-bordered table-striped text-center" style="width: 100%;">
+                        <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th>ID</th>
