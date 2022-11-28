@@ -12,6 +12,12 @@ $options = new QROptions([
 @extends('layouts.admin')
 @section('title', 'View Patient')
 @section('content')
+<style>
+    body {
+        background-image: url('../assets/img/admin_bg2.png');
+        background-size: cover;
+    }
+</style>
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">

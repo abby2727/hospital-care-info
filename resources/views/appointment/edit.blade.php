@@ -3,6 +3,12 @@
 @section('title', 'Update Appointment')
 
 @section('content')
+<style>
+    body {
+        background-image: url('../../assets/img/pbg.png');
+        background-size: cover;
+    }
+</style>
     <div class="container-fluid px-4">
         <div class="text-center p-4">
             <h3 class="text-primary">UPDATE APPOINTMENT</h3>
