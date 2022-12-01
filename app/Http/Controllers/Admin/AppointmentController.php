@@ -25,14 +25,21 @@ class AppointmentController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'appointment_date' => 'required',
+        ]);
+
         $appointments = new Appointment();
-        $appointments->patient_id = $request->input('patient_id');
         $patient = Patient::find($request->input('patient_id'));
+
+        $appointments->patient_id = $request->input('patient_id');
         $appointments->sex = $patient->sex;
         $appointments->age = $patient->age;
         $appointments->address = $patient->address;
         $appointments->contact_number = $patient->contact_number;
         $appointments->appointment_date = $request->input('appointment_date');
+
         $appointments->save();
         return redirect()->route('appointments.index')->with('status', 'Appointment added successfully!');
     }
@@ -40,11 +47,17 @@ class AppointmentController extends Controller
     {
         $appointments = Appointment::find($id);
         $patients = Patient::all();
+
         return view('appointment.edit', compact('appointments', 'patients'));
     }
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'appointment_date' => 'required',
+        ]);
+        
         $appointments = Appointment::find($id);
 
         $appointments->patient_id = $request->input('patient_id');
@@ -70,6 +83,7 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::find($id);
         $patients = Patient::all();
+
         return view('appointment.qr', compact('patients', 'appointment'));
     }
 }

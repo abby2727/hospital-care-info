@@ -63,7 +63,7 @@
                                         <td>{{ $doctor->contact_number }}</td>
                                         <td>{{ $doctor->email }}</td>
                                         <td>{{ $doctor->specialties }}</td>
-                                        <td>{{ $doctor->created_at->format('F d,Y') }}</td>
+                                        <td>{{ $doctor->created_at->format('F d, Y') }}</td>
                                         <td>
                                             <ul class="list-inline m-0">
                                                 <li class="">

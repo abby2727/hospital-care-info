@@ -15,50 +15,59 @@
         <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png" class="rounded-circle mx-auto d-block" alt="image" style="width: 200px; height: 150px">
 
     </div>
-    <div class="col-3 text-center">
+    <div class="row d-flex justify-content-center align-content-center">
+        <div class="col-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
     </div>
     <form action="{{ route('doctors.doctorsUpdate', $doctors->id) }}" method="POST" class="mb-4">
         @csrf
         <div class="row d-flex justify-content-center align-content-center">
 
             <div class="col-4">
-                <label for="exampleInputEmail1" class="fw-bold">First Name</label>
+                <label for="" class="fw-bold">First Name</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                     
                     <input type="text" name="first-name" class="form-control"  value="{{ $doctors->first_name }}">
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Middle Name</label>
+                <label for="" class="fw-bold">Middle Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="middle-name" class="form-control"  value="{{ $doctors->middle_name }}">
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Last Name</label>
+                <label for="" class="fw-bold">Last Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="last-name" class="form-control"  value="{{ $doctors->last_name }}">
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Age</label>
+                <label for="" class="fw-bold">Age</label>
                 <div class="input-group mb-3">
                     <input type="number" name="age" class="form-control"  value="{{ $doctors->age }}">
 
                 </div>
             </div>
             <div class="col-5">
-            <label for="exampleInputEmail1" class="fw-bold">Gender</label>
+            <label for="" class="fw-bold">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" name="sex" aria-label="Default select example">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Contact Number</label>
+                <label for="" class="fw-bold">Contact Number</label>
                 <div class="input-group mb-3">
                     <input type="number" name="number" class="form-control"  value="{{ $doctors->contact_number }}">
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Email </label>
+                <label for="" class="fw-bold">Email </label>
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control"  value="{{ $doctors->email }}">
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Specialties</label>
+                <label for="" class="fw-bold">Specialties</label>
                 <div class="input-group mb-3">
                     <!-- <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span> -->
                     <select class="form-select" name="specialties" aria-label="Default select example">

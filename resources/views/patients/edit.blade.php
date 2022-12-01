@@ -14,7 +14,17 @@
         <h3 class="text-light">UPDATE PATIENT</h3>
         <img src="../../assets/img/patient.png" class="rounded mx-auto d-block" alt="image" style="width: 150px; height: 150px">
     </div>
-
+    <div class="row d-flex justify-content-center align-content-center">
+        <div class="col-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
     <form action="{{ route('patients.update', $patients->id) }}" method="POST">
         @csrf
         @method('PUT')

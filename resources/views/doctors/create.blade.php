@@ -16,25 +16,36 @@
         <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png" class="rounded-circle mx-auto d-block" alt="image" style="width: 200px; height: 150px">
 
     </div>
+    <div class="row d-flex justify-content-center align-content-center">
+        <div class="col-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
     <form action="{{ route('doctors.store') }}" method="POST" class="mb-4">
         @csrf
         <div class="row d-flex justify-content-center align-content-center">
 
             <div class="col-4">
-                <label for="exampleInputEmail1" class="fw-bold">First Name</label>
+                <label for="" class="fw-bold">First Name</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
                     <input type="text" name="first-name" required class="form-control" >
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Middle Name</label>
+                <label for="" class="fw-bold">Middle Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="middle-name" required class="form-control" >
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Last Name</label>
+                <label for="" class="fw-bold">Last Name</label>
                 <div class="input-group mb-3">
                     <input type="text" name="last-name" required class="form-control" >
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Age</label>
+                <label for="" class="fw-bold">Age</label>
                 <div class="input-group mb-3">
                     <input type="number" name="age" required class="form-control" >
                 </div>
@@ -44,22 +55,22 @@
                 {{-- <div class="input-group mb-3">
                         <input type="text" name="address" class="form-control" placeholder="Address">
                     </div> --}}
-                     <label for="exampleInputEmail1" class="fw-bold">Gender</label>
+                     <label for="" class="fw-bold">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" name="sex" aria-label="Default select example">
                         <option value="0">Male</option>
                         <option value="1">Female</option>
                     </select>
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Contact Number</label>
+                <label for="" class="fw-bold">Contact Number</label>
                 <div class="input-group mb-3">
                     <input type="number" required name="number" class="form-control" >
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Email Address</label>
+                <label for="" class="fw-bold">Email Address</label>
                 <div class="input-group mb-3">
                     <input type="email" required name="email" class="form-control" >
                 </div>
-                <label for="exampleInputEmail1" class="fw-bold">Specialist</label>
+                <label for="" class="fw-bold">Specialist</label>
                 <div class="input-group mb-3">
                     {{-- <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span> --}}
                     <select class="form-select" name="specialties" aria-label="Default select example">

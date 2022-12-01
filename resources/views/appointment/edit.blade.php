@@ -13,6 +13,19 @@
         <div class="text-center p-4">
             <h3 class="text-white">UPDATE APPOINTMENT</h3>
         </div>
+
+        <div class="">
+            <div class="row">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <div>{{ $error }}</div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        </div>
+
         <form action="{{ route('appointments.update', $appointments->id) }}" method="POST" class="mb-4">
             @csrf
             @method('PUT')

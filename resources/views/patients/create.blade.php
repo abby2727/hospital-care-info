@@ -14,7 +14,17 @@
         <h3 class="text-light">REGISTER PATIENT</h3>
         <img src="../assets/img/patient.png" class="rounded mx-auto d-block" alt="image" style="width: 150px; height: 150px">
     </div>
-
+    <div class="row d-flex justify-content-center align-content-center">
+        <div class="col-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
     <form action="{{ route('patients.store') }}" method="POST">
         @csrf
         <div class="row d-flex justify-content-center align-content-center ">
@@ -83,7 +93,7 @@
                 <label for="" class="fw-bold text-center">Presciption</label>
                 <div class="input-group mb-2">
                     {{-- <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span> --}}
-                    <input type="text" name="prescription" class="form-control" required>
+                    <input type="text" name="prescription" class="form-control">
                 </div>
             </div>
 

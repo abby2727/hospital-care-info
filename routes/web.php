@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'loginPage']);
 
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     // Dashboard
@@ -49,6 +49,6 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/appointmentsqr/{id}', [AppointmentController::class, 'qr'])->name('appointment.appointmentsqr');
 });
 
-Route::get('/doctors', function () {
-    return view('doctors');
-});
+// Route::get('/doctors', function () {
+//     return view('doctors');
+// });

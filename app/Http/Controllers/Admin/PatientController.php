@@ -25,6 +25,20 @@ class PatientController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'doctor_id' => 'required',
+            'first-name' => 'required|string|max:191',
+            'middle-name' => 'required|string|max:191',
+            'last-name' => 'required|string|max:191',
+            'sex' => 'required',
+            'age' => 'required',
+            'address' => 'required|string|max:191',
+            'number' => 'required',
+            'email' => 'required|email|max:191',
+            'prescription' => 'required|string|max:191',
+            'diagnosis' => 'required|string|max:191',
+        ]);
+
         $patients = new Patient();
 
         $patients->doctor_id = $request->input('doctor_id');
@@ -55,6 +69,20 @@ class PatientController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'doctor_id' => 'required',
+            'first-name' => 'required|string|max:191',
+            'middle-name' => 'required|string|max:191',
+            'last-name' => 'required|string|max:191',
+            'sex' => 'required',
+            'age' => 'required',
+            'address' => 'required|string|max:191',
+            'number' => 'required',
+            'email' => 'required|email|max:191',
+            'prescription' => 'required|string|max:191',
+            'diagnosis' => 'required|string|max:191',
+        ]);
+        
         $patients = Patient::find($id);
 
         $patients->doctor_id = $request->input('doctor_id');

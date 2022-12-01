@@ -14,10 +14,22 @@
         <h3 class="text-light">ADD APPOINTMENT</h3>
     </div>
 
+    <div class="">
+        <div class="col">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+        </div>
+    </div>
+
     <form action="{{ route('appointments.store') }}" method="POST">
         @csrf
         <div class="col">
-            <label for="exampleInputEmail1" class="fw-bold">Select Patient</label>
+            <label for="" class="fw-bold">Select Patient</label>
             <select class="form-select" name="patient_id" aria-label="Default select example">
                 <option value="" disabled selected>Select Patient</option>
                 @foreach ($patients as $patient)
@@ -25,7 +37,7 @@
                 @endforeach
             </select>
             <br>
-            <label for="exampleInputEmail1" class="fw-bold">Appointment Date:</label>
+            <label for="" class="fw-bold">Appointment Date:</label>
             <div class="input-group mb-3">
                 <input type="datetime-local" name="appointment_date" class="form-control">
             </div>
