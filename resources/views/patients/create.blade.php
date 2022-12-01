@@ -40,7 +40,7 @@
                 </div>
                 <label for="" class="fw-bold">Middle Name</label>
                 <div class="input-group mb-3">
-                    <input type="text" name="last-name" class="form-control" >
+                    <input type="text" name="middle-name" class="form-control" >
                 </div>
                 <label for="" class="fw-bold">Last Name</label>
                 <div class="input-group mb-3">

@@ -26,7 +26,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="articleDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
+                        <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -66,17 +66,18 @@
                                         <td>{{ $doctor->created_at->format('F d,Y') }}</td>
                                         <td>
                                             <ul class="list-inline m-0">
-                                                <li class="list-inline-item">
+                                                <li class="">
                                                     <a href="{{ route('doctors.edit', $doctor->id) }}"
                                                         class="btn btn-primary"><i
                                                             class="fa-solid fa-pen-to-square"></i></a>
                                                 </li>
-                                                <li class="list-inline-item">
+                                                <li class="">
                                                     <form action="{{ route('doctors.doctorsDelete', $doctor->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">
+                                                        <button type="submit" class="btn btn-danger" 
+                                                            onclick="return confirm('Are you sure to delete this?')">
                                                             <i class="fa-solid fa-trash"></i></button>
                                                     </form>
                                                 </li>
