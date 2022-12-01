@@ -33,7 +33,7 @@
                                 {{-- <th>ID</th> --}}
                                 <th>Patient Name</th>
                                 <th>Specialist Assign</th>
-                                <th>Sex</th>
+                                <th>Gender</th>
                                 <th>Age</th>
                                 <th>Address</th>
                                 <th>Contact Number</th>

@@ -12,11 +12,11 @@
 </style>
 <div class="container-fluid px-4">
     <div class="text-center p-4">
-        <h3 class="text-primary fw-bold">REGISTER SPECIALIST</h3>
+        <h3 class="text-light">REGISTER SPECIALIST</h3>
         <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png" class="rounded-circle mx-auto d-block" alt="image" style="width: 200px; height: 150px">
 
     </div>
-    <form action="{{ route('doctors.store') }}" method="POST">
+    <form action="{{ route('doctors.store') }}" method="POST" class="mb-4">
         @csrf
         <div class="row d-flex justify-content-center align-content-center">
 
@@ -61,7 +61,7 @@
                 </div>
                 <label for="exampleInputEmail1" class="fw-bold">Specialist</label>
                 <div class="input-group mb-3">
-                    <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span>
+                    {{-- <span class="input-group-text bg-primary"><i class="bi bi-person-plus-fill text-white"></i></span> --}}
                     <select class="form-select" name="specialties" aria-label="Default select example">
                         <option value="Not Specialist Selected" disabled selected>Select Specialties</option>
                         <option value="Dentist">Dentist</option>

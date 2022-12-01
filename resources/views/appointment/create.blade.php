@@ -11,7 +11,7 @@
 </style>
 <div class="container mt-5">
     <div class="text-center p-4">
-        <h3 class="text-primary">ADD APPOINTMENT</h3>
+        <h3 class="text-light">ADD APPOINTMENT</h3>
     </div>
 
     <form action="{{ route('appointments.store') }}" method="POST">

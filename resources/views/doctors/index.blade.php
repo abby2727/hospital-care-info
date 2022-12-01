@@ -34,7 +34,7 @@
                                     {{-- <th>First Name</th>
                                     <th>Last Name</th> --}}
                                     <th>Age</th>
-                                    <th>Sex</th>
+                                    <th>Gender</th>
                                     <th>Contact Number</th>
                                     <th>Email</th>
                                     <th>Specialties</th>
