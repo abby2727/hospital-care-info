@@ -101,7 +101,8 @@ class AppointmentRevampController extends Controller
     {
         $appointments = AppointmentRevamp::find($id);
 
-        // $appointments->patientRecord()->delete();
+        // dd($appointments->patientRecord()->count());
+        $appointments->patientRecord()->delete();
         $appointments->delete();
         return redirect()->route('appointmentRevamp.index')->with('status_delete', 'Appointment deleted successfully!');
     }

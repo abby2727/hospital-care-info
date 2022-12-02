@@ -32,6 +32,6 @@ class AppointmentRevamp extends Model
 
     public function patientRecord()
     {
-        return $this->hasMany(PatientRevamp::class);
+        return $this->hasMany(PatientRevamp::class, 'appointment_patient_id');
     }
 }
