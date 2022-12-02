@@ -20,7 +20,7 @@ class CreateDoctorsTable extends Migration
             $table->string('last_name');
             $table->integer('age');
             $table->string('sex');
-            $table->integer('contact_number');
+            $table->string('contact_number');
             $table->string('email');
             $table->string('specialties');
             $table->timestamps();

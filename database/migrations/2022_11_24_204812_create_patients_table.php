@@ -22,7 +22,7 @@ class CreatePatientsTable extends Migration
             $table->string('sex');
             $table->integer('age');
             $table->string('address');
-            $table->integer('contact_number');
+            $table->string('contact_number');
             $table->string('email');
             $table->string('prescription');
             $table->timestamps();

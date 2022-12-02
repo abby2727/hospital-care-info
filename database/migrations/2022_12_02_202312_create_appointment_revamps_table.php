@@ -23,7 +23,7 @@ class CreateAppointmentRevampsTable extends Migration
             $table->string('sex');
             $table->integer('age');
             $table->string('address');
-            $table->integer('contact_number');
+            $table->string('contact_number');
             $table->string('email');
             $table->timestamp('appointment_date')->nullable();
             $table->timestamps();
