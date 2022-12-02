@@ -18,7 +18,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <div class="sb-sidenav-menu-heading">Info</div>
+
+                <div class="sb-sidenav-menu-heading">Main</div>
 
                 {{-- Doctors --}}
                 <a class="nav-link collapsed {{ Request::is('admin/doctors') || Request::is('admin/add-doctors') || Request::is('admin/doctors/*') ? 'collapse active' : 'collapsed' }}"
@@ -38,30 +39,8 @@
                     </nav>
                 </div>
 
-                {{-- Patients --}}
-                <a class="nav-link collapsed {{ Request::is('admin/patients') || Request::is('admin/add-patients') || Request::is('admin/patients/*') ? 'collapse active' : 'collapsed' }}"
-                    href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients" aria-expanded="false"
-                    aria-controls="collapsePatients">
-                    <div class="sb-nav-link-icon">
-                        <i class="fa-solid fa-hospital-user"></i>
-                    </div>
-                    Patients
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse {{ Request::is('admin/patients') || Request::is('admin/add-patients') || Request::is('admin/patients/*') ? 'show' : '' }}"
-                    id="collapsePatients" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link {{ Request::is('admin/add-patients') ? 'active' : '' }}"
-                            href="{{ route('patients.create') }}">Add Patient</a>
-                        <a class="nav-link {{ Request::is('admin/patients') || Request::is('admin/patients/*') ? 'active' : '' }}"
-                            href="{{ route('patients.index') }}">View Patient</a>
-                    </nav>
-                </div>
-
-                <div class="sb-sidenav-menu-heading">Appointment Process</div>
-
-                {{-- Appointment Process --}}
-                <a class="nav-link collapsed {{ Request::is('admin/appointments') || Request::is('admin/add-appointments') || Request::is('admin/appointments/*') ? 'collapse active' : 'collapsed' }}"
+                {{-- Appointment --}}
+                <a class="nav-link collapsed {{ Request::is('admin/appointments2') || Request::is('admin/add-appointments2') || Request::is('admin/appointments2/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#collapseAppointment" aria-expanded="false"
                     aria-controls="collapseAppointment">
                     <div class="sb-nav-link-icon">
@@ -70,13 +49,35 @@
                     Appointment
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse {{ Request::is('admin/appointments') || Request::is('admin/add-appointments') || Request::is('admin/appointments/*') ? 'show' : '' }}"
+                <div class="collapse {{ Request::is('admin/appointments2') || Request::is('admin/add-appointments2') || Request::is('admin/appointments2/*') ? 'show' : '' }}"
                     id="collapseAppointment" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link {{ Request::is('admin/add-appointments') ? 'active' : '' }}"
-                            href="{{ route('appointments.create') }}">Add Appointment</a>
-                        <a class="nav-link {{ Request::is('admin/appointments') || Request::is('admin/appointments/*') ? 'active' : '' }}"
-                            href="{{ route('appointments.index') }}">List of Appointment</a>
+                        <a class="nav-link {{ Request::is('admin/add-appointments2') ? 'active' : '' }}"
+                            href="{{ route('appointmentRevamp.create') }}">Add Appointment</a>
+                        <a class="nav-link {{ Request::is('admin/appointments2') || Request::is('admin/appointments2/*') ? 'active' : '' }}"
+                            href="{{ route('appointmentRevamp.index') }}">List of Appointment</a>
+                    </nav>
+                </div>
+
+                <div class="sb-sidenav-menu-heading">Record</div>
+
+                {{-- Patients --}}
+                <a class="nav-link collapsed {{ Request::is('admin/patients2') || Request::is('admin/add-patients2') || Request::is('admin/patients2/*') ? 'collapse active' : 'collapsed' }}"
+                    href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients2" aria-expanded="false"
+                    aria-controls="collapsePatients2">
+                    <div class="sb-nav-link-icon">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    Patients
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse {{ Request::is('admin/patients2') || Request::is('admin/add-patients2') || Request::is('admin/patients2/*') ? 'show' : '' }}"
+                    id="collapsePatients2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link {{ Request::is('admin/add-patients2') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.create') }}">Add Patient</a>
+                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.index') }}">View Patient</a>
                     </nav>
                 </div>
             </div>
@@ -84,7 +85,6 @@
     </nav>
 </div>
 <script>
-    //exporte les données sélectionnées
     var $table = $('#table');
     $(function() {
         $('#toolbar').find('select').change(function() {

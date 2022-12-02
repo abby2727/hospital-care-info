@@ -89,7 +89,8 @@ class DoctorController extends Controller
     {
         $doctors = Doctor::find($id);
 
-        $doctors->patients()->delete();
+        // $doctors->patients()->delete();
+        $doctors->appointments()->delete();
         $doctors->delete();
         return redirect()->route('doctors.index')->with('deleted', 'Specialist Deleted!');
     }

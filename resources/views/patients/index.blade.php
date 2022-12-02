@@ -66,7 +66,6 @@
                                 <td>{{ $patient->diagnosis }}</td>
                                 {{-- <td>{{ $patient->created_at->format('F d,Y h:i A') }}</td> --}}
                                 <td>{{ $patient->created_at->format('F d,Y') }}</td>
-                            
                                 <td>
                                     <ul class=" justify-content-center">
                                         <a href="{{ route('patients.edit', $patient->id) }}" class="btn btn-primary">
@@ -83,11 +82,6 @@
                                         </li>
                                     </ul>
                                 </td>
-
-
-
-
-
                                 <td>
                                     <a href="{{ route('patients.patientsqr', $patient->id) }}" target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                 </td>
