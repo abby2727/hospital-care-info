@@ -46,7 +46,9 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/patients2', [PatientRevampController::class, 'index'])->name('patientRevamp.index');
     Route::get('/add-patients2', [PatientRevampController::class, 'create'])->name('patientRevamp.create');
     Route::post('/patients2', [PatientRevampController::class, 'store'])->name('patientRevamp.store');
+    Route::post('/patients2Reconfined', [PatientRevampController::class, 'reconfined'])->name('patientRevamp.reconfined');
     Route::get('/patients2/{id}', [PatientRevampController::class, 'edit'])->name('patientRevamp.edit');
+    Route::get('/patients2hisup/{id}', [PatientRevampController::class, 'hisup'])->name('patientRevamp.hisup');
     Route::put('/patients2/{id}', [PatientRevampController::class, 'update'])->name('patientRevamp.update');
     Route::delete('/patients2/{id}', [PatientRevampController::class, 'destroy'])->name('patientRevamp.destroy');
 

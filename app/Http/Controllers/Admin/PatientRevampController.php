@@ -43,6 +43,13 @@ class PatientRevampController extends Controller
         return redirect()->route('patientRevamp.index')->with('status', 'Patient recorded successfully!');
     }
 
+
+    public function reconfined(Request $request)
+    {
+       dd("I save and date");
+    }
+
+
     public function edit($id)
     {
         $patients = PatientRevamp::find($id);
@@ -50,6 +57,14 @@ class PatientRevampController extends Controller
 
         return view('revamp.patients.edit', compact('patients', 'appointments'));
     }
+
+    public function hisup($id)
+    {
+        $patients = PatientRevamp::find($id);
+        $appointments = AppointmentRevamp::all();
+        return view('revamp.patients.udpatehistory', compact('patients', 'appointments'));
+    }
+
 
     public function update(Request $request, $id)
     {
