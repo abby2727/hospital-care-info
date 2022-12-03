@@ -2766,8 +2766,8 @@
                 <script type="text/javascript">
                     load();
                 </script>
-                <table id="myDataTable" class="table table-bordered table-striped text-center  text-white align-content-between" style="width: 100%; background-color:#022e4b;">
-                    <thead>
+                <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%; background-color:#022e4b;">
+                    <thead class="text-white">
                         <tr>
                             <th>ID</th>
                             <th>Patient Name</th>
