@@ -71,6 +71,7 @@
                                     <ul class="justify-content-center align-content-between d-flex">
                                         <a href="{{ route('appointmentRevamp.edit', $appointment->id) }}" class="btn btn-primary">
                                             <i class="fa-solid fa-pen-to-square"></i></a>
+                                       
 
                                         <form action="{{ route('appointmentRevamp.destroy', $appointment->id) }}" method="POST">
                                             @csrf
