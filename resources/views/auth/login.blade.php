@@ -66,7 +66,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.6418942577030813) 7%, rgb
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary fw-bold text-center">
                                     {{ __('Login') }}
                                 </button>
 
