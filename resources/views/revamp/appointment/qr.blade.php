@@ -36,7 +36,7 @@ $options = new QROptions([
                         </h4>
                     </div>
                     <br>
-                    <h4 style="text-align: center">CLICK THE QRCODE IMAGE BELOW TO DOWNLOAD</h4>
+                    <h4 style="text-align: center">CLICK QRCODE TO DOWNLOAD</h4>
                     <div class="card-body" style="text-align: center;">
                         @php
                             $date = $appointments->appointment_date->format('F d, Y h:i A');

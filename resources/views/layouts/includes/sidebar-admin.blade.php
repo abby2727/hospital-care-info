@@ -50,12 +50,12 @@
                     Appointment
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse {{ Request::is('admin/appointments2') || Request::is('admin/add-appointments2') || Request::is('admin/appointments2/*') ? 'show' : '' }}"
+                <div class="collapse {{ Request::is('admin/appointments2') || Request::is('admin/add-appointments2') || Request::is('admin/appointments2/*') || Request::is('admin/appointmentsqr/*') ? 'show' : '' }}"
                     id="collapseAppointment" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{ Request::is('admin/add-appointments2') ? 'active' : '' }}"
                             href="{{ route('appointmentRevamp.create') }}">Add Appointment</a>
-                        <a class="nav-link {{ Request::is('admin/appointments2') || Request::is('admin/appointments2/*') ? 'active' : '' }}"
+                        <a class="nav-link {{ Request::is('admin/appointments2') || Request::is('admin/appointments2/*') || Request::is('admin/appointmentsqr/*') ? 'active' : '' }}"
                             href="{{ route('appointmentRevamp.index') }}">List of Appointment</a>
                     </nav>
                 </div>
@@ -72,12 +72,12 @@
                     Patients
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse {{ Request::is('admin/patients2') || Request::is('admin/add-patients2') || Request::is('admin/patients2/*') ? 'show' : '' }}"
+                <div class="collapse {{ Request::is('admin/patients2') || Request::is('admin/add-patients2') || Request::is('admin/patients2/*') || Request::is('admin/patientsqr/*') ? 'show' : '' }}"
                     id="collapsePatients2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{ Request::is('admin/add-patients2') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.create') }}">Add Patient</a>
-                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') || Request::is('admin/patientsqr/*') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.index') }}">View Patient</a>
                         {{-- <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.history') }}">Patient History Update Via QRCODE DECODER</a> --}}

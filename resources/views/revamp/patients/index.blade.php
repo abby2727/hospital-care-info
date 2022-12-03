@@ -47,16 +47,20 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         <td>{{ $patient->id }}</td>
-                                        <td><p class="fw-bold">{{ $patient->appointment_patient->name }}</p></td>
+                                        <td>
+                                            <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
+                                        </td>
                                         <td>{{ $patient->diagnosis }}</td>
                                         <td>{{ $patient->prescription }}</td>
-                                         <td>
+                                        <td>
                                             <li class="d-flex">
-                                                <a href="{{ route('patientRevamp.edit', $patient->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('patientRevamp.edit', $patient->id) }}"
+                                                    class="btn btn-primary">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
 
-                                                <form action="{{ route('patientRevamp.destroy', $patient->id) }}" method="POST">
+                                                <form action="{{ route('patientRevamp.destroy', $patient->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"
@@ -67,8 +71,10 @@
                                             </ul>
                                         </td>
                                         <td>
+                                            {{-- <a href="{{ route('patients.patientsrevampqr', $patient->id) }}"
+                                                target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a> --}}
                                             <a href="{{ route('patients.patientsrevampqr', $patient->id) }}"
-                                                target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
+                                                class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

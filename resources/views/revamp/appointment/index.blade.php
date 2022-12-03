@@ -48,7 +48,9 @@
                                 @foreach ($appointments as $appointment)
                                     <tr>
                                         <td>{{ $appointment->id }}</td>
-                                        <td><p class="fw-bold">{{ $appointment->name }}</p></td>
+                                        <td>
+                                            <p class="fw-bold">{{ $appointment->name }}</p>
+                                        </td>
                                         <td>
                                             @if ($appointment->sex == '0')
                                                 <p>Male</p>
@@ -62,14 +64,18 @@
                                         <td>{{ $appointment->email }}</td>
                                         {{-- <td>{{ $appointment->appointment_date->format('F d,Y') }}</td> --}}
                                         <td>{{ $appointment->appointment_date->format('F d, Y h:i A') }}</td>
-                                        <td><p class="fw-bold">{{ $appointment->doctor->name }}</p></td>
+                                        <td>
+                                            <p class="fw-bold">{{ $appointment->doctor->name }}</p>
+                                        </td>
 
                                         <td>
                                             <ul class=" justify-content-center">
-                                                <a href="{{ route('appointmentRevamp.edit', $appointment->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('appointmentRevamp.edit', $appointment->id) }}"
+                                                    class="btn btn-primary">
                                                     <i class="fa-solid fa-pen-to-square"></i></a>
 
-                                                <form action="{{ route('appointmentRevamp.destroy', $appointment->id) }}" method="POST">
+                                                <form action="{{ route('appointmentRevamp.destroy', $appointment->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"
@@ -81,7 +87,9 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href="{{ route('appointment.revampappointmentqr', $appointment->id) }}" target="_blank"
+                                            {{-- <a href="{{ route('appointment.revampappointmentqr', $appointment->id) }}" target="_blank"
+                                                class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a> --}}
+                                            <a href="{{ route('appointment.revampappointmentqr', $appointment->id) }}"
                                                 class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
