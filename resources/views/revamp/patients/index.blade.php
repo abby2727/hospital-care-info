@@ -24,9 +24,9 @@
                     <h6 class="alert alert-danger">{{ session('existed') }}</h6>
                 @endif
                 <div class="card">
-                    <div class="card-header fw-bold">
+                    <div class="card-header fw-bold btn-lg">
                         <h4>View Patient Record
-                            <a href="{{ route('patientRevamp.create') }}" class="btn btn-sm btn-primary float-end fw-bold">
+                            <a href="{{ route('patientRevamp.create') }}" class="btn btn-sm btn-primary float-end fw-bold ">
                                 Add Patient Record
                             </a>
                         </h4>

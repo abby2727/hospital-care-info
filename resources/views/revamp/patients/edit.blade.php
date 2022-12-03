@@ -30,7 +30,7 @@
             @csrf
             @method('PUT')
             <div class="col">
-                <label for="" class="fw-bold">Select Patient</label>
+                <label for="" class="fw-bold ">Select Patient</label>
                 <select class="form-select" name="patient_id" aria-label="Default select example">
                     <option value="" disabled selected>Select Patient</option>
                     @foreach ($appointments as $appointment)
