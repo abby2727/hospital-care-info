@@ -48,7 +48,7 @@
 
 <div class="container-fluid mt-4">
     <div class="row">
-        <h2 class="text-center">SCAN YOUR QR CODE</h2>
+        <h2 class="text-center fw-bold">SCAN YOUR QR CODE</h2>
         <div class="col-md-12">
             <div class="card-body text-center justify-content-md-center">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
