@@ -12,6 +12,12 @@ $options = new QROptions([
 @extends('layouts.admin')
 @section('title', 'View Patient')
 @section('content')
+    <style>
+        body {
+            background-image: url('../assets/img/admin_bg2.png');
+            background-size: cover;
+        }
+    </style>
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
@@ -24,7 +30,8 @@ $options = new QROptions([
                 <div class="card">
                     <div class="card-header">
                         <h4>QR CODE
-                            <a href="{{ route('patients.index') }}" class="btn btn-sm btn-primary float-end">Return Selecting
+                            <a href="{{ route('patientRevamp.index') }}" class="btn btn-sm btn-primary float-end">Return
+                                Selecting
                                 Patients</a>
                         </h4>
                     </div>
@@ -32,20 +39,13 @@ $options = new QROptions([
                     <h4 style="text-align: center">CLICK THE QRCODE IMAGE BELOW TO DOWNLOAD</h4>
                     <div class="card-body" style="text-align: center;">
                         @php
-                            if ($patients->sex == 0) {
-                                $sexContext = 'Male';
-                            } else {
-                                $sexContext = 'Female';
-                            }
-                            
-                            $context = "HCI SYSTEM , Patient Name : $patients->name  $patients->age $sexContext  $patients->contact_number , Doctor`s Prescription : $patients->prescription";
+                            $newname = $patients->appointment_patient->name;
+                            $context = "$newname";
                             $qrcode = (new QRCode($options))->render($context);
                         @endphp
                         <a href="<?= $qrcode ?>" download>
                             <img src='<?= $qrcode ?>' alt='QR Code' width='500' height='500'>
                         </a>
-
-
                     </div>
                 </div>
             </div>

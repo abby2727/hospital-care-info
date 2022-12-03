@@ -78,6 +78,10 @@
                             href="{{ route('patientRevamp.create') }}">Add Patient</a>
                         <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.index') }}">View Patient</a>
+                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.history') }}">Patient History Update Via QRCODE DECODER</a>
+                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                            href="#a">Patient History Update Via QRCODE SCANNER</a>
                     </nav>
                 </div>
             </div>

@@ -78,4 +78,18 @@ class PatientRevampController extends Controller
         $patients->delete();
         return redirect()->route('patientRevamp.index')->with('status_delete', 'Patient deleted successfully!');
     }
+
+    public function qr($id)
+    {
+        $patients  = PatientRevamp::find($id);
+        return view('revamp.patients.qr', compact('patients'));
+    }
+
+    public function history()
+    {
+        $patients = PatientRevamp::orderBy('id', 'DESC')->get();
+        $appointment_patients = AppointmentRevamp::all();
+
+        return view('revamp.patients.history', compact('patients', 'appointment_patients'));
+    }
 }

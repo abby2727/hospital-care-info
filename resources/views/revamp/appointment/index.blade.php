@@ -81,7 +81,7 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href="{{ route('patients.patientsqr', $appointment->id) }}" target="_blank"
+                                            <a href="{{ route('appointment.revampappointmentqr', $appointment->id) }}" target="_blank"
                                                 class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>

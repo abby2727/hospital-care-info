@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\AppointmentRevamp;
 use App\Models\Admin\Doctor;
+use App\Models\Admin\PatientRevamp;
 use Illuminate\Http\Request;
 
 class AppointmentRevampController extends Controller
@@ -105,5 +106,11 @@ class AppointmentRevampController extends Controller
         $appointments->patientRecord()->delete();
         $appointments->delete();
         return redirect()->route('appointmentRevamp.index')->with('status_delete', 'Appointment deleted successfully!');
+    }
+
+    public function qr($id)
+    {
+        $appointments = AppointmentRevamp::find($id);
+        return view('revamp.appointment.qr', compact('appointments'));
     }
 }

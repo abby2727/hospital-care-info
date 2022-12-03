@@ -50,18 +50,7 @@
                                         <td><p class="fw-bold">{{ $patient->appointment_patient->name }}</p></td>
                                         <td>{{ $patient->diagnosis }}</td>
                                         <td>{{ $patient->prescription }}</td>
-                                        {{-- <td>
-                                            @if ($patient->sex == '0')
-                                                <p>Male</p>
-                                            @elseif($patient->sex == '1')
-                                                <p>Female</p>
-                                            @endif
-                                        </td>
-                                        <td>{{ $patient->age }}</td>
-                                        <td>{{ $patient->address }}</td>
-                                        <td>{{ $patient->contact_number }}</td>
-                                        <td>{{ $patient->appointment_date->format('F d,Y h:i A') }}</td> --}}
-                                        <td>
+                                         <td>
                                             <li class="d-flex">
                                                 <a href="{{ route('patientRevamp.edit', $patient->id) }}" class="btn btn-primary">
                                                     <i class="fa-solid fa-pen-to-square"></i>
@@ -78,7 +67,7 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href="{{ route('appointment.appointmentsqr', $patient->id) }}"
+                                            <a href="{{ route('patients.patientsrevampqr', $patient->id) }}"
                                                 target="_blank" class="btn btn-dark"><i class="fa-solid fa-qrcode"></i></a>
                                         </td>
                                     </tr>
