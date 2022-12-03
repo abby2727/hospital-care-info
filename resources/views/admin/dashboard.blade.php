@@ -42,7 +42,7 @@
 
             {{-- Appointments --}}
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card bg-info border-left-success shadow h-100 py-2" style="color: aliceblue;">
+                <div class="card bg-primary border-left-success shadow h-100 py-2" style="color: aliceblue;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
@@ -68,7 +68,7 @@
 
             {{-- Patients --}}
             <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card bg-info border-left-success shadow h-100 py-2" style="color: aliceblue;">
+                <div class="card bg-danger border-left-success shadow h-100 py-2" style="color: aliceblue;">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
