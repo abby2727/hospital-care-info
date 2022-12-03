@@ -51,7 +51,6 @@
                     <table id="myTable">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Patient Name</th>
                                 <th>Diagnosis</th>
                                 <th>Prescription</th>
@@ -62,7 +61,6 @@
                         <tbody>
                             @foreach ($patients as $patient)
                                 <tr>
-                                    <td>{{ $patient->id }}</td>
                                     <td>
                                         <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
                                     </td>
