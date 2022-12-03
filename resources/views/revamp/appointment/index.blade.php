@@ -26,7 +26,7 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%;">
+                        <table id="myDataTable" class="table table-bordered table-striped text-center  text-white align-content-between" style="width: 100%; background-color:#022e4b;">
                             <thead>
                                 {{-- @foreach ($appointments as $appointment)
                                 @endforeach --}}
