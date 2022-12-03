@@ -16,8 +16,8 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="ds col-md-5">
-            <div class="card opacity-60" style="border-radius: 40px; background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,0.6418942577030813) 7%, rgba(6,68,108,0.3337710084033614) 34%, rgba(6,68,108,1) 81%);">
+            <div class="card opacity-60" style="border-radius: 40px; background: rgb(6,68,108);
+background: linear-gradient(180deg, rgba(6,68,108,0.3337710084033614) 3%, rgba(6,68,108,0.8603816526610644) 77%);">
                 <div class="card-header text-center fw-bold">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -65,8 +65,8 @@ background: linear-gradient(180deg, rgba(255,255,255,0.6418942577030813) 7%, rgb
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary fw-bold text-center">
+                            <div class="col-md-5 offset-md-4">
+                                <button type="submit" class="btn btn-primary fw-bold text-center btn-lg">
                                     {{ __('Login') }}
                                 </button>
 
@@ -91,8 +91,7 @@ background: linear-gradient(180deg, rgba(255,255,255,0.6418942577030813) 7%, rgb
             <br>
             <br>
             <br>
-            <br>
-            <br>
+         
             <br>
             <div class="row-md-2 text-center align-content- text-light">
                 <ul class="list-unstyled mb-0 text-center align-content-center fw-bold">
