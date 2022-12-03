@@ -11,7 +11,7 @@
     </style>
     <div class="container mt-5">
         <div class="text-center p-4">
-            <h3 class="text-light">ADD PATIENT RECORD</h3>
+            <h3 class="text-dark">ADD PATIENT RECORD</h3>
         </div>
 
         <div class="">

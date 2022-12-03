@@ -55,7 +55,7 @@
                                         <td>{{ $patient->prescription }}</td>
                                         <td>{{ $patient->created_at->format('F d, Y h:i A') }}</td>
                                         <td>
-                                            <li class="d-flex">
+                                            <li class="d-flex align-content-center justify-content-center">
                                                 <a href="{{ route('patientRevamp.edit', $patient->id) }}"
                                                     class="btn btn-primary">
                                                     <i class="fa-solid fa-pen-to-square"></i>

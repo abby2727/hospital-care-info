@@ -12,7 +12,7 @@
 </style>
 <div class="container-fluid px-4">
     <div class="text-center p-4">
-        <h3 class="text-light">REGISTER SPECIALIST</h3>
+        <h3 class="text-dark">REGISTER SPECIALIST</h3>
         <img src="https://www.pngitem.com/pimgs/m/111-1115791_transparent-doctor-png-advanced-practice-registered-nurse-png.png" class="rounded-circle mx-auto d-block" alt="image" style="width: 200px; height: 150px">
 
     </div>

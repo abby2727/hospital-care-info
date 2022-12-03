@@ -2786,7 +2786,7 @@
                                     <td>{{ $patient->diagnosis }}</td>
                                     <td>{{ $patient->prescription }}</td>
                                     <td>
-                                        <li class="d-flex">
+                                        <li class="d-flex align-content-center justify-content-center">
                                             <a href="{{ route('patientRevamp.edit', $patient->id) }}"
                                                 class="btn btn-primary">
                                                 <i class="fa-solid fa-pen-to-square"></i>

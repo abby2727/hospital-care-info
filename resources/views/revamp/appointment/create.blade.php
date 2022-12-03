@@ -11,7 +11,7 @@
     </style>
     <div class="container-fluid px-4">
         <div class="text-center p-4">
-            <h3 class="text-light">MAKE APPOINTMENT</h3>
+            <h3 class="text-dark">MAKE APPOINTMENT</h3>
             <img src="../assets/img/patient.png" class="rounded mx-auto d-block" alt="image"
                 style="width: 150px; height: 150px">
         </div>

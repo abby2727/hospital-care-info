@@ -66,12 +66,12 @@
                                         <td>{{ $doctor->created_at->format('F d, Y') }}</td>
                                         <td>
                                             <ul class="list-inline m-0">
-                                                <li class="">
+                                                <li class="d-flex align-content-center justify-content-center">
                                                     <a href="{{ route('doctors.edit', $doctor->id) }}"
                                                         class="btn btn-primary"><i
                                                             class="fa-solid fa-pen-to-square"></i></a>
-                                                </li>
-                                                <li class="">
+
+                                             
                                                     <form action="{{ route('doctors.doctorsDelete', $doctor->id) }}"
                                                         method="POST">
                                                         @csrf

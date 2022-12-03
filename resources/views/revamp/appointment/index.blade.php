@@ -69,7 +69,7 @@
                                         </td>
 
                                         <td>
-                                            <ul class=" justify-content-center">
+                                            <ul class="justify-content-center align-content-between d-flex">
                                                 <a href="{{ route('appointmentRevamp.edit', $appointment->id) }}"
                                                     class="btn btn-primary">
                                                     <i class="fa-solid fa-pen-to-square"></i></a>
