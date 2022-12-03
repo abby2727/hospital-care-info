@@ -13,6 +13,7 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
+
                 <div class="sb-sidenav-menu-heading">Core</div>
                 <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" href="{{ url('admin/') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -78,12 +79,35 @@
                             href="{{ route('patientRevamp.create') }}">Add Patient</a>
                         <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.index') }}">View Patient</a>
-                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
-                            href="{{ route('patientRevamp.history') }}">Patient History Update Via QRCODE DECODER</a>
-                        <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
-                            href="#a">Patient History Update Via QRCODE SCANNER</a>
+                        {{-- <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.history') }}">Patient History Update Via QRCODE DECODER</a> --}}
+                        {{-- <a class="nav-link {{ Request::is('admin/patients2') || Request::is('admin/patients2/*') ? 'active' : '' }}"
+                            href="#a">Patient History Update Via QRCODE SCANNER</a> --}}
                     </nav>
                 </div>
+
+                <div class="sb-sidenav-menu-heading">Medical History</div>
+
+                <a class="nav-link collapsed {{ Request::is('admin/patientshistory') ? 'collapse active' : 'collapsed' }}"
+                    href="#" data-bs-toggle="collapse" data-bs-target="#QRcollapsePatients2" aria-expanded="false"
+                    aria-controls="QRcollapsePatients2">
+                    <div class="sb-nav-link-icon">
+                        {{-- <i class="fa-solid fa-hospital-user"></i> --}}
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    QR Patient History
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse {{ Request::is('admin/patientshistory') ? 'show' : '' }}" id="QRcollapsePatients2"
+                    aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        {{-- <a class="nav-link {{ Request::is('admin/patientshistory') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.history') }}">Patient History Update Via QRCODE DECODER</a> --}}
+                        <a class="nav-link {{ Request::is('admin/patientshistory') ? 'active' : '' }}"
+                            href="{{ route('patientRevamp.history') }}">QR Code Reader</a>
+                    </nav>
+                </div>
+
             </div>
         </div>
     </nav>

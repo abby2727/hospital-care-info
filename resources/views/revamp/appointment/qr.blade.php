@@ -30,9 +30,9 @@ $options = new QROptions([
                 <div class="card">
                     <div class="card-header">
                         <h4>QR CODE
-                            <a href="{{ route('appointmentRevamp.index') }}" class="btn btn-sm btn-primary float-end">Return
-                                Selecting
-                                Patients</a>
+                            <a href="{{ route('appointmentRevamp.index') }}" class="btn btn-sm btn-danger float-end">
+                                Back
+                            </a>
                         </h4>
                     </div>
                     <br>
