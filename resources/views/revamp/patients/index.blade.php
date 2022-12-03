@@ -39,6 +39,7 @@
                                     <th>Patient Name</th>
                                     <th>Diagnosis</th>
                                     <th>Prescription</th>
+                                    <th>Date of Record</th>
                                     <th>Action</th>
                                     <th>QRCODE</th>
                                 </tr>
@@ -52,6 +53,7 @@
                                         </td>
                                         <td>{{ $patient->diagnosis }}</td>
                                         <td>{{ $patient->prescription }}</td>
+                                        <td>{{ $patient->created_at->format('F d, Y h:i A') }}</td>
                                         <td>
                                             <li class="d-flex">
                                                 <a href="{{ route('patientRevamp.edit', $patient->id) }}"
