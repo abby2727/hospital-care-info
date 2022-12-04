@@ -19,6 +19,7 @@
                                 <th>Diagnosis</th>
                                 <th>Prescription</th>
                                 <th>Date Recorded</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,15 @@
                                     <td>{{ $patient->diagnosis }}</td>
                                     <td>{{ $patient->prescription }}</td>
                                     <td>{{ $patient->created_at }}</td>
+                                    <td>
+                                        <li class="d-flex align-content-center justify-content-center">
+                                            <a href="{{ route('patientRevamp.hisup', $patient->id) }}"
+                                                class="btn btn-primary">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

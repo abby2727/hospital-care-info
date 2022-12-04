@@ -20,7 +20,7 @@
                             video: document.getElementById('preview')
                         });
                         scanner.addListener('scan', function(content) {
-                            alert("The QRCODE IS READED PLEASE CLICK THE HISTORY TRACK BUTTON");
+                            alert("YOUR QRCODE IS READED !");
                             var msg = content;
                             document.getElementById("myInput").value = msg;
                         });
@@ -40,7 +40,7 @@
                 <div class="card-body" style="text-align: center;">
                     <form action="{{ route('patientRevamp.track') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-danger">CLICK HERE AFTER THE NAME APPEAR TO FIND THE
+                        <button type="submit" class="btn btn-sm btn-danger">CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE
                             HISTORY TRACK FOR THIS
                             QRCODE</a>
                             <input type="text" id="myInput" name="myInput" hidden>

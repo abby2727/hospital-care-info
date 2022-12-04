@@ -12,7 +12,6 @@ class PatientRevampController extends Controller
     public function index()
     {
         $patients = PatientRevamp::orderBy('id', 'DESC')->get();
-        // $patients->groupBy('appointment_patient_id')->get();
         $appointment_patients = AppointmentRevamp::all();
 
         return view('revamp.patients.index', compact('patients', 'appointment_patients'));
