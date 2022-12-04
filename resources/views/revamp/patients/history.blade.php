@@ -59,7 +59,7 @@
                 <video class="border border-5 border-primary" id="preview"></video>
                 <input class="text-center fw-bold mt-2" style="border-radius: 40px;  box-shadow: 1px 2px; color:#022e4b;" type="text" id="myInput" onkeyup="myFunction()" placeholder="PLEASE CLICK FIRST THE SEARCH BOX THEN CLICK THE RIGTH ARROW KEY AFTER THE NAME APPEAR ON THE SEARCH BUTTON" title="Type in a name">
 
-                <table id="Table" class="table table-bordered table-striped text-center" style="width: 100%;">
+                <table id="myTable" class="table table-bordered table-striped text-center" style="width: 100%;">
                     <thead class="text-white">
                         <tr>
                             <th style="background-color:#022e4b;">ID</th>
@@ -67,6 +67,7 @@
                             <th style="background-color:#022e4b;">Diagnosis</th>
                             <th style="background-color:#022e4b;">Prescription</th>
                             <th style="background-color:#022e4b;">Record Date</th>
+                            <th style="background-color:#022e4b;">Reconfined Date</th>
                             <th style="background-color:#022e4b;">Action</th>
                         </tr>
                     </thead>
@@ -80,9 +81,10 @@
                             <td>{{ $patient->diagnosis }}</td>
                             <td>{{ $patient->prescription }}</td>
                             <td>{{ $patient->created_at->format('F d, Y h:i A') }}</td>
+                            <td>{{ $patient->updated_at->format('F d, Y h:i A') }}</td>
                             <td>
                                 <li class="d-flex align-content-center justify-content-center">
-                                    <a href="{{ route('patientRevamp.hisup', $patient->id) }}" class="btn btn-primary">
+                                    <a href="{{ route('patientRevamp.hisUpdate', $patient->id) }}" class="btn btn-primary">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
                                     {{-- <form action="{{ route('patientRevamp.destroy', $patient->id) }}"
