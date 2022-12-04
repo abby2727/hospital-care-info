@@ -12,10 +12,21 @@ class PatientRevampController extends Controller
     public function index()
     {
         $patients = PatientRevamp::orderBy('id', 'DESC')->get();
+        // $patients->groupBy('appointment_patient_id')->get();
         $appointment_patients = AppointmentRevamp::all();
 
         return view('revamp.patients.index', compact('patients', 'appointment_patients'));
     }
+
+
+    public function track(Request $request)
+    {
+        $name = $request->input('myInput');
+        $appointment_patients = AppointmentRevamp::all();
+        $patients = PatientRevamp::all()->where('appointment_patient_id',  $name);
+        return view('revamp.patients.track', compact('patients', 'appointment_patients'));
+    }
+
 
     public function create()
     {
@@ -43,10 +54,17 @@ class PatientRevampController extends Controller
         return redirect()->route('patientRevamp.index')->with('status', 'Patient recorded successfully!');
     }
 
-    // public function reconfined(Request $request)
-    // {
-    //     dd("I save and date");
-    // }
+
+    public function reconfined(Request $request)
+    {
+        //     $patients = new PatientRevamp();
+        //    $patients->appointment_patient->name = $request->input('patient_id');
+        //     $patients->diagnosis = $request->input('diagnosis');
+        //     $patients->prescription = $request->input('prescription');
+        //     $patients->save();
+        //     return redirect()->route('patientRevamp.index')->with('status', 'Patient recorded successfully!');
+    }
+
 
     public function edit($id)
     {
@@ -55,6 +73,14 @@ class PatientRevampController extends Controller
 
         return view('revamp.patients.edit', compact('patients', 'appointments'));
     }
+
+    public function hisup($id)
+    {
+        $patients = PatientRevamp::find($id);
+        $appointments = AppointmentRevamp::all();
+        return view('revamp.patients.udpatehistory', compact('patients', 'appointments'));
+    }
+
 
     public function update(Request $request, $id)
     {
@@ -74,34 +100,6 @@ class PatientRevampController extends Controller
 
         $patients->update();
         return redirect()->route('patientRevamp.index')->with('status', 'Patient updated successfully!');
-    }
-
-    public function hisEdit($id)
-    {
-        $patients = PatientRevamp::find($id);
-        $appointments = AppointmentRevamp::all();
-
-        return view('medical-history.edit', compact('patients', 'appointments'));
-    }
-
-    public function hisUpdate(Request $request, $id)
-    {
-        // dd($id);
-        $request->validate([
-            'patient_id' => 'required',
-            'diagnosis' => 'required',
-            'prescription' => 'required',
-        ]);
-
-        $patients = PatientRevamp::find($id);
-
-        $patients->appointment_patient_id = $request->input('patient_id');
-        $patients->diagnosis = $request->input('diagnosis');
-        // dd($patients->first_name);
-        $patients->prescription = $request->input('prescription');
-
-        $patients->update();
-        return redirect()->route('patientRevamp.history')->with('status', 'Patient record updated!');
     }
 
     public function destroy($id)

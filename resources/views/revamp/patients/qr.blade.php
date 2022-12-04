@@ -39,7 +39,7 @@ $options = new QROptions([
                     <h4 style="text-align: center">CLICK QRCODE TO DOWNLOAD</h4>
                     <div class="card-body" style="text-align: center;">
                         @php
-                            $newname = $patients->appointment_patient->name;
+                            $newname = $patients->appointment_patient_id;
                             $context = "$newname";
                             $qrcode = (new QRCode($options))->render($context);
                         @endphp
