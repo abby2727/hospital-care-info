@@ -58,48 +58,47 @@
                 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
                 <video class="border border-5 border-primary" id="preview"></video>
                 <input class="text-center fw-bold mt-2" style="border-radius: 40px;  box-shadow: 1px 2px; color:#022e4b;" type="text" id="myInput" onkeyup="myFunction()" placeholder="PLEASE CLICK FIRST THE SEARCH BOX THEN CLICK THE RIGTH ARROW KEY AFTER THE NAME APPEAR ON THE SEARCH BUTTON" title="Type in a name">
-                <div class="card-body">
-                    <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%; background-color:#022e4b;">
-                        <thead class="text-white">
-                            <tr>
-                                <th>ID</th>
-                                <th>Patient Name</th>
-                                <th>Diagnosis</th>
-                                <th>Prescription</th>
-                                <th>Record Date</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($patients as $patient)
-                            <tr>
-                                <td>{{ $patient->id }}</td>
-                                <td>
-                                    <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
-                                </td>
-                                <td>{{ $patient->diagnosis }}</td>
-                                <td>{{ $patient->prescription }}</td>
-                                <td>{{ $patient->created_at->format('F d, Y h:i A') }}</td>
-                                <td>
-                                    <li class="d-flex align-content-center justify-content-center">
-                                        <a href="{{ route('patientRevamp.hisup', $patient->id) }}" class="btn btn-primary">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        {{-- <form action="{{ route('patientRevamp.destroy', $patient->id) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete this?')">
-                                            <i class="fa-solid fa-trash"></i></button>
-                                        </form> --}}
-                                    </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-bordered table-striped text-center" style="width: 100%;">
+                    <thead class="text-white">
+                        <tr>
+                            <th style="background-color:#022e4b;">ID</th>
+                            <th style="background-color:#022e4b;">Patient Name</th>
+                            <th style="background-color:#022e4b;">Diagnosis</th>
+                            <th style="background-color:#022e4b;">Prescription</th>
+                            <th style="background-color:#022e4b;">Record Date</th>
+                            <th style="background-color:#022e4b;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($patients as $patient)
+                        <tr>
+                            <td>{{ $patient->id }}</td>
+                            <td>
+                                <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
+                            </td>
+                            <td>{{ $patient->diagnosis }}</td>
+                            <td>{{ $patient->prescription }}</td>
+                            <td>{{ $patient->created_at->format('F d, Y h:i A') }}</td>
+                            <td>
+                                <li class="d-flex align-content-center justify-content-center">
+                                    <a href="{{ route('patientRevamp.hisup', $patient->id) }}" class="btn btn-primary">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    {{-- <form action="{{ route('patientRevamp.destroy', $patient->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete this?')">
+                                        <i class="fa-solid fa-trash"></i></button>
+                                    </form> --}}
+                                </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
