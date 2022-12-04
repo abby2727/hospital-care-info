@@ -55,7 +55,7 @@
                 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
                 <video class="border border-5 border-primary" id="preview"></video>
                 <input class="text-center fw-bold mt-2" style="border-radius: 40px;  box-shadow: 1px 2px; color:#022e4b;" type="text" id="myInput" onkeyup="myFunction()" placeholder="PLEASE CLICK FIRST THE SEARCH BOX THEN CLICK THE RIGTH ARROW KEY AFTER THE NAME APPEAR ON THE SEARCH BUTTON" title="Type in a name">
-                <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%; background-color:#022e4b;">
+                <table id="myTable" class="table table-bordered table-striped text-center" style="width: 100%; background-color:#022e4b;">
                     <thead class="text-white">
                         <tr>
                             <th>Patient Name</th>
