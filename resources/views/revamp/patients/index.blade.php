@@ -39,7 +39,7 @@
                                 <th>Patient Name</th>
                                 <th>Diagnosis</th>
                                 <th>Prescription</th>
-                                <th>Date of Record</th>
+                                <th>Record Date</th>
                                 <th>Action</th>
                                 <th>QRCODE</th>
                             </tr>
