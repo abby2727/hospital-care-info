@@ -65,6 +65,7 @@
                     <table id="myTable" class="table table-bordered table-striped text-center">
                         <thead class="text-white">
                             <tr>
+                                <th>ID</th>
                                 <th>Patient Name</th>
                                 <th>Diagnosis</th>
                                 <th>Prescription</th>
@@ -75,6 +76,7 @@
                         <tbody>
                             @foreach ($patients as $patient)
                                 <tr>
+                                    <td>{{ $patient->id }}</td>
                                     <td>
                                         <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
                                     </td>
