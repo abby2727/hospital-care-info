@@ -20,6 +20,10 @@ Route::get('/', [LoginController::class, 'loginPage']);
 Auth::routes();
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+});
+
 Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -39,20 +43,21 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/appointments2/{id}', [AppointmentRevampController::class, 'edit'])->name('appointmentRevamp.edit');
     Route::put('/appointments2/{id}', [AppointmentRevampController::class, 'update'])->name('appointmentRevamp.update');
     Route::delete('/appointments2/{id}', [AppointmentRevampController::class, 'destroy'])->name('appointmentRevamp.destroy');
-    
+
     Route::get('/appointmentsqr/{id}', [AppointmentRevampController::class, 'qr'])->name('appointment.revampappointmentqr');
 
     // Patient Revamp
     Route::get('/patients2', [PatientRevampController::class, 'index'])->name('patientRevamp.index');
     Route::get('/add-patients2', [PatientRevampController::class, 'create'])->name('patientRevamp.create');
     Route::post('/patients2', [PatientRevampController::class, 'store'])->name('patientRevamp.store');
-    Route::post('/patients2Reconfined', [PatientRevampController::class, 'reconfined'])->name('patientRevamp.reconfined');
+    // Route::post('/patients2Reconfined', [PatientRevampController::class, 'reconfined'])->name('patientRevamp.reconfined');
     Route::get('/patients2/{id}', [PatientRevampController::class, 'edit'])->name('patientRevamp.edit');
-    Route::get('/patients2hisup/{id}', [PatientRevampController::class, 'hisup'])->name('patientRevamp.hisup');
     Route::put('/patients2/{id}', [PatientRevampController::class, 'update'])->name('patientRevamp.update');
     Route::delete('/patients2/{id}', [PatientRevampController::class, 'destroy'])->name('patientRevamp.destroy');
-
+    
     Route::get('/patientshistory', [PatientRevampController::class, 'history'])->name('patientRevamp.history');
     Route::get('/patientsqr/{id}', [PatientRevampController::class, 'qr'])->name('patients.patientsrevampqr');
-});
 
+    Route::get('/patients2hisup/{id}', [PatientRevampController::class, 'hisEdit'])->name('patientRevamp.hisEdit');
+    Route::put('/patients2hisup/{id}', [PatientRevampController::class, 'hisUpdate'])->name('patientRevamp.hisUpdate');
+});
