@@ -33,7 +33,6 @@ class PatientRevampController extends Controller
 
         return view('revamp.patients.create', compact('appointments'));
     }
-
     public function store(Request $request)
     {
         $request->validate([
