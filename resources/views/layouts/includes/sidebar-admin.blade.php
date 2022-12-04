@@ -84,7 +84,7 @@
 
                 <div class="sb-sidenav-menu-heading">Medical History</div>
 
-                <a class="nav-link collapsed {{ Request::is('admin/patientshistory') ? 'collapse active' : 'collapsed' }}"
+                <a class="nav-link collapsed {{ Request::is('admin/patientshistory') || Request::is('admin/patients2hisup/*') ? 'collapse active' : 'collapsed' }}"
                     href="#" data-bs-toggle="collapse" data-bs-target="#QRcollapsePatients2" aria-expanded="false"
                     aria-controls="QRcollapsePatients2">
                     <div class="sb-nav-link-icon">
@@ -93,10 +93,10 @@
                     QR Patient History
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse {{ Request::is('admin/patientshistory') ? 'show' : '' }}" id="QRcollapsePatients2"
+                <div class="collapse {{ Request::is('admin/patientshistory') || Request::is('admin/patients2hisup/*') ? 'show' : '' }}" id="QRcollapsePatients2"
                     aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link {{ Request::is('admin/patientshistory') ? 'active' : '' }}"
+                        <a class="nav-link {{ Request::is('admin/patientshistory') || Request::is('admin/patients2hisup/*') ? 'active' : '' }}"
                             href="{{ route('patientRevamp.history') }}">QR Code Reader</a>
                     </nav>
                 </div>
