@@ -59,7 +59,7 @@
                 <video class="border border-5 border-primary" id="preview"></video>
                 <input class="text-center fw-bold mt-2" style="border-radius: 40px;  box-shadow: 1px 2px; color:#022e4b;" type="text" id="myInput" onkeyup="myFunction()" placeholder="PLEASE CLICK FIRST THE SEARCH BOX THEN CLICK THE RIGTH ARROW KEY AFTER THE NAME APPEAR ON THE SEARCH BUTTON" title="Type in a name">
 
-                <table class="table table-bordered table-striped text-center" style="width: 100%;">
+                <table id="Table" class="table table-bordered table-striped text-center" style="width: 100%;">
                     <thead class="text-white">
                         <tr>
                             <th style="background-color:#022e4b;">ID</th>
