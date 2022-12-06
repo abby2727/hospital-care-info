@@ -38,6 +38,7 @@
             </div>
             <div class="col-md-12">
                 <div class="card-body" style="text-align: center;">
+                   
                     <form action="{{ route('patientRevamp.track') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-sm btn-danger">CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE
