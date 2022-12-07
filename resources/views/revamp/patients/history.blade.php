@@ -7,6 +7,13 @@
         height: 500px;
         margin: 0px auto;
     }
+
+
+
+    body {
+        background-image: url('../assets/img/bg.png');
+        background-size: cover;
+    }
 </style>
 <div class="container-fluid mt-4">
     <div class="row">
