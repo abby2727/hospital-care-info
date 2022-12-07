@@ -27,7 +27,7 @@ Setting up your development environment on your local machine:
 git clone https://github.com/abby2727/hospital-care-info.git
 cd hospital-care-info
 cp .env.example .env
-composer install
+composer install (or composer update)
 php artisan key:generate
 php artisan migrate
 php artisan optimize
