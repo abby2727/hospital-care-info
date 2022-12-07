@@ -20,6 +20,10 @@ Route::get('/', [LoginController::class, 'loginPage']);
 Auth::routes();
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+});
+
 Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
