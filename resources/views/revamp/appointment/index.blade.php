@@ -30,7 +30,7 @@
                             {{-- @foreach ($appointments as $appointment)
                                 @endforeach --}}
                             <tr>
-                                <th>ID</th>
+                                {{-- <th>ID</th> --}}
                                 <th>Patient Name</th>
                                 <th>Gender</th>
                                 <th>Age</th>
@@ -46,7 +46,7 @@
                         <tbody>
                             @foreach ($appointments as $appointment)
                             <tr>
-                                <td>{{ $appointment->id }}</td>
+                                {{-- <td>{{ $appointment->id }}</td> --}}
                                 <td>
                                     <p class="fw-bold">{{ $appointment->name }}</p>
                                 </td>

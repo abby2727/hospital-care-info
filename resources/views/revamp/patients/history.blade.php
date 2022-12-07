@@ -37,6 +37,7 @@
                 </div>
             </div>
             <div class="col-md-12">
+                <p class="text-center">After Scanning QR Code and the alert button appear. Click the button below to find the history track of the Patient.</p>
                 <div class="card-body" style="text-align: center;">
                     @if (session('status'))
                         <h6 class="alert alert-success">{{ session('status') }}</h6>
@@ -45,7 +46,8 @@
                         @csrf
                         {{-- <input type="text" id="myInput" name="myInput"> --}}
                         <button type="submit" class="btn btn-sm btn-danger">
-                            CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE HISTORY TRACK FOR THIS QRCODE
+                            {{-- CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE HISTORY TRACK FOR THIS QRCODE --}}
+                            Find Patient History
                             <input type="text" id="myInput" name="myInput" hidden>
                         </button>
                     </form>

@@ -35,7 +35,7 @@
                     <table id="myDataTable" class="table table-bordered table-striped text-center" style="width: 100%; background-color:#022e4b;">
                         <thead class="text-white">
                             <tr>    
-                                <th>Appointment ID</th>
+                                {{-- <th>Appointment ID</th> --}}
                                 <th>Patient Name</th>
                                 <th>Diagnosis</th>
                                 <th>Prescription</th>
@@ -47,7 +47,7 @@
                         <tbody>
                             @foreach ($patients as $patient)
                             <tr>
-                                <td>{{ $patient->appointment_patient_id }}</td>
+                                {{-- <td>{{ $patient->appointment_patient_id }}</td> --}}
                                 <td>
                                     <p class="fw-bold">{{ $patient->appointment_patient->name }}</p>
                                 </td>
