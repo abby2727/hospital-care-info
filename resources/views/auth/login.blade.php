@@ -100,11 +100,11 @@ background: linear-gradient(180deg, rgba(6,68,108,0.3337710084033614) 3%, rgba(6
                     </li>
 
                     <li><i class="fas fa-phone mt-4 fa-2x text-center align-content-center text-light fw-bold "></i>
-                        <p>+ 01 234 567 89</p>
+                        <p>+63 9381586118</p>
                     </li>
 
                     <li><i class="fas fa-envelope mt-4 fa-2x text-center align-content-center text-light fw-bold "></i>
-                        <p>healthcare@gmail.com</p>
+                        <p>ptapiador@ssct.edu.ph</p>
                     </li>
                 </ul>
             </div>
