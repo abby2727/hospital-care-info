@@ -26,14 +26,24 @@
             </div>
         </div>
 
-        <form action="{{ route('patientRevamp.reconfined') }}" method="POST">
+        <form action="{{ route('patientRevamp.reconfined', $patients->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="col">
                 <label for="" class="fw-bold">Patient Name:</label>
-                <div class="input-group mb-3">
+                {{-- <div class="input-group mb-3">
                     <input type="text" name="name" value="{{ $patients->appointment_patient->name }}"
-                        class="form-control" disabled>
-                </div>
+                        class="form-control">
+                </div> --}}
+                <select class="form-select mb-3" style="background: rgb(219, 215, 215);" name="patient_id" aria-label="Default select example">
+                    {{-- <option value="" disabled selected>Select Patient</option> --}}
+                    @foreach ($appointments as $appointment)
+                        <option value="{{ $appointment->id }}"
+                            {{ $appointment->id == $patients->appointment_patient_id ? 'selected' : '' }}>
+                            {{ $appointment->name }}
+                        </option>
+                    @endforeach
+                </select>
                 <label for="" class="fw-bold">Diagnosis:</label>
                 <div class="input-group mb-3">
                     <input type="text" name="diagnosis" value="{{ $patients->diagnosis }}" class="form-control" required>

@@ -44,14 +44,15 @@ Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
 
     // Patient Revamp
     Route::get('/patients2', [PatientRevampController::class, 'index'])->name('patientRevamp.index');
-    Route::post('/patients2Track', [PatientRevampController::class, 'track'])->name('patientRevamp.track');
     Route::get('/add-patients2', [PatientRevampController::class, 'create'])->name('patientRevamp.create');
     Route::post('/patients2', [PatientRevampController::class, 'store'])->name('patientRevamp.store');
-    Route::post('/patients2Reconfined', [PatientRevampController::class, 'reconfined'])->name('patientRevamp.reconfined');
     Route::get('/patients2/{id}', [PatientRevampController::class, 'edit'])->name('patientRevamp.edit');
-    Route::get('/patients2hisup/{id}', [PatientRevampController::class, 'hisup'])->name('patientRevamp.hisup');
     Route::put('/patients2/{id}', [PatientRevampController::class, 'update'])->name('patientRevamp.update');
     Route::delete('/patients2/{id}', [PatientRevampController::class, 'destroy'])->name('patientRevamp.destroy');
+
+    Route::post('/patients2Track', [PatientRevampController::class, 'track'])->name('patientRevamp.track');
+    Route::put('/patients2Reconfined/{id}', [PatientRevampController::class, 'reconfined'])->name('patientRevamp.reconfined');
+    Route::get('/patients2hisup/{id}', [PatientRevampController::class, 'hisup'])->name('patientRevamp.hisup');
 
     Route::get('/patientshistory', [PatientRevampController::class, 'history'])->name('patientRevamp.history');
     Route::get('/patientsqr/{id}', [PatientRevampController::class, 'qr'])->name('patients.patientsrevampqr');

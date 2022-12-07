@@ -17,22 +17,13 @@ class PatientRevampController extends Controller
         return view('revamp.patients.index', compact('patients', 'appointment_patients'));
     }
 
-
-    public function track(Request $request)
-    {
-        $name = $request->input('myInput');
-        $appointment_patients = AppointmentRevamp::all();
-        $patients = PatientRevamp::all()->where('appointment_patient_id',  $name);
-        return view('revamp.patients.track', compact('patients', 'appointment_patients'));
-    }
-
-
     public function create()
     {
         $appointments = AppointmentRevamp::all();
 
         return view('revamp.patients.create', compact('appointments'));
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -52,18 +43,6 @@ class PatientRevampController extends Controller
         return redirect()->route('patientRevamp.index')->with('status', 'Patient recorded successfully!');
     }
 
-
-    public function reconfined(Request $request)
-    {
-        //     $patients = new PatientRevamp();
-        //    $patients->appointment_patient->name = $request->input('patient_id');
-        //     $patients->diagnosis = $request->input('diagnosis');
-        //     $patients->prescription = $request->input('prescription');
-        //     $patients->save();
-        //     return redirect()->route('patientRevamp.index')->with('status', 'Patient recorded successfully!');
-    }
-
-
     public function edit($id)
     {
         $patients = PatientRevamp::find($id);
@@ -78,7 +57,6 @@ class PatientRevampController extends Controller
         $appointments = AppointmentRevamp::all();
         return view('revamp.patients.udpatehistory', compact('patients', 'appointments'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -98,6 +76,38 @@ class PatientRevampController extends Controller
 
         $patients->update();
         return redirect()->route('patientRevamp.index')->with('status', 'Patient updated successfully!');
+    }
+
+    public function track(Request $request)
+    {
+        $appointment_patients = AppointmentRevamp::all();
+        $appointment_id = $request->input('myInput');
+        // $patients = PatientRevamp::all()->where('appointment_patient_id',  $name);
+        $patients = PatientRevamp::where('appointment_patient_id', $appointment_id)->get();
+
+        return view('revamp.patients.track', compact('patients', 'appointment_patients'));
+    }
+
+    public function reconfined(Request $request, $id)
+    {
+        // dd($id);
+        $request->validate([
+            'patient_id' => 'required',
+            'diagnosis' => 'required',
+            'prescription' => 'required',
+        ]);
+
+        $patients = PatientRevamp::find($id);
+
+        $patients->appointment_patient_id = $request->input('patient_id');
+        $patients->diagnosis = $request->input('diagnosis');
+        // dd($patients->first_name);
+        $patients->prescription = $request->input('prescription');
+
+        $patients->update();
+        // return redirect()->route('patientRevamp.history')
+        //     ->with('status', 'Patient record updated! Click here to continue');
+        return redirect()->route('patientRevamp.index')->with('status', 'Patient record updated!');
     }
 
     public function destroy($id)

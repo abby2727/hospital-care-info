@@ -38,13 +38,16 @@
             </div>
             <div class="col-md-12">
                 <div class="card-body" style="text-align: center;">
-                   
+                    @if (session('status'))
+                        <h6 class="alert alert-success">{{ session('status') }}</h6>
+                    @endif
                     <form action="{{ route('patientRevamp.track') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-danger">CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE
-                            HISTORY TRACK FOR THIS
-                            QRCODE</a>
+                        {{-- <input type="text" id="myInput" name="myInput"> --}}
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            CLICK HERE THE ALERT BUTTON APPEAR TO FIND THE HISTORY TRACK FOR THIS QRCODE
                             <input type="text" id="myInput" name="myInput" hidden>
+                        </button>
                     </form>
                 </div>
             </div>
