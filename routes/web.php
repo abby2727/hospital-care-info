@@ -1,13 +1,14 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AppointmentController;
+use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\AppointmentRevampController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DoctorController;
-use App\Http\Controllers\Admin\PatientController;
 use App\Http\Controllers\Admin\PatientRevampController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,15 +19,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'loginPage']);
 
 Auth::routes();
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth', 'is_admin'])->group(function () {
-    Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
-});
+// Route::middleware(['auth', 'is_admin'])->group(function () {
+//     Route::get('/home', [DashboardController::class, 'index'])->name('dashboard');
+// });
 
-Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
+// Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Register Admin
+    Route::get('register', [RegisterController::class, 'registerPage'])->name('register.index');
+    Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 
     // Doctor 
     Route::get('/doctors', [DoctorController::class, 'index'])->name('doctors.index');

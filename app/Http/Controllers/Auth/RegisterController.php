@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -38,8 +39,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
-        $this->middleware('guest');
+        $this->middleware('auth');
+        // $this->middleware('guest');
     }
 
     /**
@@ -70,5 +71,29 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            // 'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:5', 'confirmed']
+        ]);
+
+        User::create([
+            'name' => $request->input('name'),
+            // 'username' => $request->input('username'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password'))
+        ]);
+
+        return redirect()->back()->with("success", "Admin Registered Successfully!");
+    }
+
+    public function registerPage()
+    {
+        return view('auth.register');
     }
 }

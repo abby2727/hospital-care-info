@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('title', 'Register Admin')
+
+@section('content')
 <style>
     body {
         background-image: url('assets/img/rgb.png');
@@ -9,11 +13,28 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            {{-- <div class="col-4">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <div>{{ $error }}</div>
+                        @endforeach
+                    </div>
+                @endif
+            </div> --}}
+
             <div class="card" style="border-radius: 40px;">
-                <div class="card-header text-center">{{ __('Register') }}</div>
+                <div class="card-header text-center">{{ __('Register Admin') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register.store') }}">
                         @csrf
 
                         <div class="row mb-3">

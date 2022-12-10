@@ -16,18 +16,18 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function authenticated()
-    {
-        if (Auth::user()->is_admin == '1') {
-            return redirect()->route('dashboard')->with('status', 'Welcome Admin!');
-        } else if (Auth::user()->is_admin == '0') {
-            return redirect()->route('home')->with('status', 'Welcome Dear Consumer!');
-        } else {
-            return redirect('/');
-        }
-    }
+    // public function authenticated()
+    // {
+    //     if (Auth::user()->is_admin == '1') {
+    //         return redirect()->route('dashboard')->with('status', 'Welcome Admin!');
+    //     } else if (Auth::user()->is_admin == '0') {
+    //         return redirect()->route('home')->with('status', 'Welcome Dear Consumer!');
+    //     } else {
+    //         return redirect('/');
+    //     }
+    // }
 
     /**
      * Create a new controller instance.

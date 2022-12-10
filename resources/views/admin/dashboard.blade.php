@@ -10,8 +10,8 @@
         }
     </style>
 
-    <div class="container-fluid px-4 mt-5">
-        <h3 class="mt-4">Dashboard</h3>
+    <div class="container-fluid px-4 mt-4">
+        <h3 class="mb-4">Dashboard</h3>
 
         {{-- Specialists --}}
         <div class="row">
