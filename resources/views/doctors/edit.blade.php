@@ -55,8 +55,8 @@
             <label for="" class="fw-bold">Gender</label>
                 <div class="input-group mb-3">
                     <select class="form-select" name="sex" aria-label="Default select example">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
                     </select>
                 </div>
                 <label for="" class="fw-bold">Contact Number</label>
